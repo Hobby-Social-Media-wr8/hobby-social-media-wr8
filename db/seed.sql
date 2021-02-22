@@ -48,7 +48,12 @@ CREATE TABLE event (
     event_start_time TIMESTAMP REFERENCES event_template(template_start_time),
     event_end_time TIMESTAMP REFERENCES event_template(template_end_time)
 );
-
+CREATE TABLE users (
+    user_id SERIAL PRIMARY KEY,
+    username VARCHAR(250) NOT NULL,
+    email VARCHAR(150) NOT NULL,
+    password VARCHAR(250) NOT NULL
+);
 CREATE TABLE groups (
     group_id SERIAL PRIMARY KEY, 
     group_name VARCHAR(100),
@@ -57,7 +62,10 @@ CREATE TABLE groups (
     group_instruments TEXT,
     img_url VARCHAR(100),
     group_needed_members INT REFERENCES needed_band_members(needed_members_id)
+
 );
 
-
-
+create table groupUsers(
+group_users_id int references groups(group_id),
+group_users int references users(user_id)
+);
