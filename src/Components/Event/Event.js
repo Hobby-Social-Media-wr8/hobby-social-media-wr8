@@ -1,11 +1,15 @@
-function Event({ event }) {
-    return (
-        <span>
-      <strong>
-      {event.title}
-      </strong>
-            { event.desc && (':  ' + event.desc)}
-    </span>
-    )
-}
+import React, {Component} from 'react';
+import Calendar from '../Calendar/Calendar';
 
+class Event extends Component {
+    render() {
+        return (
+            <div>
+                <main>
+                    <Calendar />
+                </main>
+            </div>
+        );
+    }
+}
+export default Event;

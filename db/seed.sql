@@ -39,16 +39,21 @@ CREATE TABLE event_template (
   template_end_time TIMESTAMP UNIQUE
 );
 
-CREATE TABLE event (
-    event_id SERIAL PRIMARY KEY,
-    event_type_id INT,
-    event_title VARCHAR(250),
-    event_description TEXT REFERENCES event_template(template_event_description),
-    event_location VARCHAR REFERENCES event_template(template_event_location),
-    event_start_time TIMESTAMP REFERENCES event_template(template_start_time),
-    event_end_time TIMESTAMP REFERENCES event_template(template_end_time)
+CREATE TABLE cal_event (
+    cal_event_id SERIAL PRIMARY KEY,
+    cal_event_type_id INT,
+    cal_event_title VARCHAR(250),
+    cal_event_description TEXT REFERENCES event_template(template_event_description),
+    cal_event_location VARCHAR REFERENCES event_template(template_event_location),
+    cal_event_start_time TIMESTAMP REFERENCES event_template(template_start_time),
+    cal_event_end_time TIMESTAMP REFERENCES event_template(template_end_time)
 );
-
+CREATE TABLE users (
+    user_id SERIAL PRIMARY KEY,
+    username VARCHAR(250) NOT NULL,
+    email VARCHAR(150) NOT NULL,
+    password VARCHAR(250) NOT NULL
+);
 CREATE TABLE groups (
     group_id SERIAL PRIMARY KEY, 
     group_name VARCHAR(100),
@@ -57,7 +62,10 @@ CREATE TABLE groups (
     group_instruments TEXT,
     img_url VARCHAR(100),
     group_needed_members INT REFERENCES needed_band_members(needed_members_id)
+
 );
 
-
-
+create table groupUsers(
+group_users_id int references groups(group_id),
+group_users int references users(user_id)
+);

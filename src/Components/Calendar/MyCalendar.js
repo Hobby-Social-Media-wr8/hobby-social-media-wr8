@@ -1,53 +1,58 @@
-import React, {useState} from 'react';
-import {BigCalendar, dateFnsLocalizer} from 'react-big-calendar'
-import format from 'date-fns/format'
-import parse from 'date-fns/parse'
-import startOfWeek from 'date-fns/startOfWeek'
-import getDay from 'date-fns/getDay'
-import Calendar from './components/Calendar/Calendar';
+import React, {Component} from 'react'
+import {Calendar, momentLocalizer} from 'react-big-calendar';
+import moment from 'moment';
+import 'react-big-calendar/lib/css/react-big-calendar.css'
+moment.locale('en-GB');
+import axios from 'axios'
+const localizer = BigCalendar.momentLocalizer(moment);
 
-function MyCalendar() {
-    const locales = {
-        'en-US': require('date-fns/locale/en-US'),
-      }
-      const localizer = dateFnsLocalizer({
-        format,
-        parse,
-        startOfWeek,
-        getDay,
-        locales,
-      })
-    const [eventsList, setEventsList] = useState([]);
-    
-handleSelect = ({ start, end }) => {
-    const title = window.prompt('New Event name')
-        if (title) {
-            var newEvent = {
-                start: start,
-                end: end,
-                title: title 
-                }
-            let updateEventsList = eventsList;
-                updateEventsList.push(newEvent);
-                setEventsList(updateEventsList);
-            }
-            setEventsList([...eventsList, newEvent]);
-    };
-    
-        return (
-            <div>
-            <Calendar
-            selectable
-            defaultView="week"
-            defaultDate={new Date()}
-            localizer={localizer}
-            events={eventsList}
-            startAccessor="start"
-            endAccessor="end"
-            style={{ height: 500 }}
-            onSelectSlot={handleSelect}
-            />
-            </div>
-        )
+class MyCalendar extends Component{
+    constructor(props) {
+        super(props)    
+        this.state = {
+          cal_events: [],
+        }
     }
+
+    convertDate = (date) => {
+        return moment.utc(date).toDate()
+      }
+
+    componentDidMount(){
+        axios.get('/api/cal-events')
+        .then(response => {
+        
+        let appointments = response.data;
+        
+        for (let i = 0; i < appointments.length; i++) {
+          appointments[i].start = moment.utc(appointments[i].start).toDate();
+          appointments[i].end = moment.utc(appointments[i].end).toDate();
+          
+        }        
+        self.setState({cal_events: appointments})
+      })
+      .catch((error) =>{
+        console.log(error);
+      });
+  }
+
+  render(){
+      const {cal_events} = this.state;
+    return(
+        <div>   
+        <Calendar
+        localizer={localizer}
+        events={cal_events}
+        step={30}
+        defaultView = 'month'
+        views={['month', 'week', 'day']}
+        defaultDate ={new Date()}
+        timeslots= {3}
+        startAccessor="start"
+        endAccessor="end"
+        />
+        </div>   
+    )
+  }
+}
 export default MyCalendar
