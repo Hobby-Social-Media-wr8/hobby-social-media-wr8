@@ -52,10 +52,10 @@ class Auth extends Component {
   render() {
     return (
       <div className="auth-container">
-        <h1>Authentication Page</h1>
+        <div className="auth-flex">
         {this.state.registerToggle ? (
           <>
-            <h3>Register Here</h3>
+            <h1>Register Here</h1>
             <input
               value={this.state.username}
               name="username"
@@ -64,7 +64,7 @@ class Auth extends Component {
             />
           </>
         ) : (
-          <h3>Login Here</h3>
+          <h1>Login</h1>
         )}
         <input value={this.state.email} name="email" placeholder="Email" onChange={(e) => this.handleInput(e)} />
         <input
@@ -99,6 +99,7 @@ class Auth extends Component {
             </p>
           </>
         )}
+        </div>
       </div>
     );
   }
