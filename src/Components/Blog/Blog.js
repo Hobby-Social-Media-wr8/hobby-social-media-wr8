@@ -9,6 +9,10 @@ class Blog extends Component {
         }
         
           };
+
+          getPosts =()=>{
+              axios.get('/api/posts')
+          }
     
     render() {
        

@@ -38,6 +38,8 @@ app.get("/api/logout", authCtrl.logout);
 
 // POST/BLOG ENDPOINTS
 app.post("/api/post", pc.createPost);
-app.delete('/api/post/:id', pc.deletePost)
-app.get('/api/post/:id', pc.readPost);
+app.delete('/api/post/:user_id', pc.deletePost)
+app.get('/api/post/:user_id', pc.readPost);
+app.get('/api/posts', pc.readPosts);
+
 
