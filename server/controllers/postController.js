@@ -27,12 +27,13 @@ module.exports = {
         let { user_id } = req.session.user;
         let { mine, search, oldest } = req.query;
         const db = await req.app.get('db')
+
         if (mine && !search) {
           if (oldest) {
-            db.blog.search.read_all_oldest_first()
+            db.blog.read_all_oldest_first()
               .then(posts => res.status(200).send(posts))
           } else {
-            db.blog.search.read_all_posts()
+            db.blog.read_all_posts()
               .then(posts => res.status(200).send(posts))
           }
         } else if (!mine && search) {
@@ -45,18 +46,18 @@ module.exports = {
           }
         } else if (mine && search) {
           if (oldest) {
-            db.search.search_all_oldest_first([`%${search.toLowerCase()}%`])
+            db.blog.search.search_all_oldest_first([`%${search.toLowerCase()}%`])
               .then(posts => res.status(200).send(posts))
           } else {
-            db.search.search_all_posts([`%${search.toLowerCase()}%`])
+            db.blog.search.search_all_posts([`%${search.toLowerCase()}%`])
               .then(posts => res.status(200).send(posts))
           }
         } else {
           if (oldest) {
-            db.post.read_other_oldest_first([user_id])
+            db.blog.read_other_oldest_first([user_id])
               .then(posts => res.status(200).send(posts))
           } else {
-            db.post.read_other_users_posts([user_id])
+            db.blog.read_other_users_posts([user_id])
               .then(posts => res.status(200).send(posts))
           }
         }
