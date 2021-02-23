@@ -2,6 +2,8 @@ require("dotenv").config();
 const session = require("express-session");
 const express = require("express");
 const massive = require("massive");
+const authCtrl = require("./Controllers/authController");
+const profCtrl = require("./Controllers/profileController");
 const authCtrl = require("./Controllers/authController"),
   pc = require("./Controllers/postController");
 // const profCtrl = require("./Controllers/profileController")
@@ -36,6 +38,8 @@ app.get("/api/logout", authCtrl.logout);
 
 // OTHER ENDPOINTS
 
+app.get("/api/profile/:id", profCtrl.getUserProfile);
+app.put("/api/profile/:id", profCtrl.editInfo);
 // POST/BLOG ENDPOINTS
 app.post("/api/post", pc.createPost);
 app.delete('/api/post/:user_id', pc.deletePost)

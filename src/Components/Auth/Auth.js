@@ -2,6 +2,7 @@ import { Component } from "react";
 import axios from "axios";
 import { connect } from "react-redux";
 import { getUser } from "../../redux/reducer";
+import "../Auth/Auth.css";
 
 class Auth extends Component {
   constructor(props) {
@@ -50,7 +51,7 @@ class Auth extends Component {
 
   render() {
     return (
-      <div>
+      <div className="auth-container">
         <h1>Authentication Page</h1>
         {this.state.registerToggle ? (
           <>
