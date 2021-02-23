@@ -59,17 +59,20 @@ class Auth extends Component {
               value={this.state.username}
               name="username"
               placeholder="Username"
+              onChange={(e) => this.handleInput(e)}
             />
           </>
         ) : (
           <h3>Login Here</h3>
         )}
-        <input value={this.state.email} name="email" placeholder="Email" />
+        <input value={this.state.email} name="email" placeholder="Email" onChange={(e) => this.handleInput(e)} />
         <input
           value={this.state.password}
           name="password"
           type="password"
           placeholder="Password"
+          onChange={(e) => this.handleInput(e)}
+          
         />
         {this.state.registerToggle ? (
           <>
@@ -83,7 +86,7 @@ class Auth extends Component {
             <button onClick={this.handleRegister}>Register</button>
             <p>
               Already have an account?{" "}
-              <span onClick={this.handleToggle}>Login Here</span>
+              <span style ={{cursor: 'pointer', textDecoration: 'underline'}} onClick={this.handleToggle}>Login Here</span>
             </p>
           </>
         ) : (
@@ -91,7 +94,7 @@ class Auth extends Component {
             <button onClick={this.handleLogin}>Login</button>
             <p>
               Don't have an account with us yet?{" "}
-              <span onClick={this.handleToggle}>Register Here</span>
+              <span style ={{cursor: 'pointer', textDecoration: 'underline'} } onClick={this.handleToggle}>Register Here</span>
             </p>
           </>
         )}
