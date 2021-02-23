@@ -3,6 +3,7 @@ const massive = require("massive");
 const { SERVER_PORT, CONNECTION_STRING, SESSION_SECRET } = process.env;
 const session = require("express-session"),
 express = require('express');
+const eCtrl = require('./controllers/eventsController')
 
 const app = express();
 app.use(express.json())
@@ -25,4 +26,7 @@ massive({
     })
   );
 
+
+//Events endpoints
+// app.get('/api/search-events', eCtrl.getEvents)
 

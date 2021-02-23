@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import dateFns from 'date-fns';
+import BigCalendar from 'react-big-calendar'
 import './Calendar.css';
 
 class Calendar extends Component {
@@ -9,6 +10,17 @@ class Calendar extends Component {
             currentMonth: new Date(),
             selectedDate: new Date()
         }
+        const locales = {
+            'en-US': require('date-fns/locale/en-US'),
+          }
+          const localizer = dateFnsLocalizer({
+            format,
+            parse,
+            startOfWeek,
+            getDay,
+            locales,
+          })
+          let allViews = Object.keys(BigCalendar.views).map(k => BigCalendar.view[k])
     }
    
     renderHeader() {
@@ -113,6 +125,30 @@ class Calendar extends Component {
             {this.renderHeader()}
             {this.renderDays()}
             {this.renderCells()}
+            <section>
+                {/* <Event
+                 startAccessor='start'
+                endAccessor='end'
+                currentMonthView = {currentMonth}
+                currentSelectDate = {selectedDate}/> */}
+                <BigCalendar
+                selectable
+                onSelectEvent={event => this.onEventClick(event)}
+                onSelectSlot={(slotInfo) => this.onSlotChange(slotInfo) }
+                events={myEventsList}
+                views={allViews}
+                step={30}
+                timeslots={3}
+                defaultView='week'
+                defaultDate={new Date()}
+                components={{
+                 event: Event,
+                 agenda: {
+                    event: EventAgenda
+                 }
+                }}
+                />  
+            </section>
         </div>
       );
     }
