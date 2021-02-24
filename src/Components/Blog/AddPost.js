@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import axios from 'axios'
+import './AddPost.css'
 
 class AddPost  extends Component {
     constructor(){
@@ -21,14 +22,13 @@ class AddPost  extends Component {
     render() {
        
         return (
-            <div>
+            <div className='addpost-main'>
             <h2 className='title'>New Post</h2>
             <div className='form-main'>
           <div className='form-input-box'>
             <p>Title:</p>
             <input value={this.state.title} onChange={e => this.setState({ title: e.target.value })} />
           </div>
-          {/* <img className='form-img-prev' src={imgSrc} alt='preview'/> */}
           <div className='form-input-box'>
             <p>Image URL:</p>
             <input value={this.state.img} onChange={e => this.setState({ img: e.target.value })} />
@@ -37,8 +37,9 @@ class AddPost  extends Component {
             <p>Content:</p>
             <textarea value={this.state.content} onChange={e => this.setState({ content: e.target.value })} />
           </div>
-        </div>
         <button onClick={this.submit} >Post</button>
+
+        </div>
 
 
             </div>
