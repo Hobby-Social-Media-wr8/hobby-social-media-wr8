@@ -4,6 +4,7 @@ const express = require("express");
 const massive = require("massive");
 const profCtrl = require("./Controllers/profileController");
 const authCtrl = require("./Controllers/authController"),
+  ec= require('./controllers/eventsController')
   pc = require("./Controllers/postController");
 const { SERVER_PORT, CONNECTION_STRING, SESSION_SECRET } = process.env;
 
@@ -44,4 +45,6 @@ app.delete('/api/post/:user_id', pc.deletePost)
 app.get('/api/post/:user_id', pc.readPost);
 app.get('/api/posts', pc.readPosts);
 
-
+//Events Controllers
+app.get('/api/events', ec.getCalEvents)
+app.post('/api/event/:id', ec.addEvents)
