@@ -1,58 +1,39 @@
-import React, {Component} from 'react'
-import {Calendar, momentLocalizer} from 'react-big-calendar';
-import moment from 'moment';
-import 'react-big-calendar/lib/css/react-big-calendar.css'
-moment.locale('en-GB');
-import axios from 'axios'
-const localizer = BigCalendar.momentLocalizer(moment);
+import React, { Component } from 'react' 
+import axios from 'axios' 
+import FullCalendar from "@fullcalendar/react";  
+import dayGridPlugin from "@fullcalendar/daygrid";  
+import timeGridPlugin from "@fullcalendar/timegrid";  
 
-class MyCalendar extends Component{
-    constructor(props) {
-        super(props)    
-        this.state = {
-          cal_events: [],
-        }
-    }
+// import "@fullcalendar/core/main.css";  
+// import "@fullcalendar/daygrid/main.css";  
+// import "@fullcalendar/timegrid/main.css";  
 
-    convertDate = (date) => {
-        return moment.utc(date).toDate()
-      }
+const events = [{ title: "Today", date: new Date() }];  
 
-    componentDidMount(){
-        axios.get('/api/cal-events')
-        .then(response => {
-        
-        let appointments = response.data;
-        
-        for (let i = 0; i < appointments.length; i++) {
-          appointments[i].start = moment.utc(appointments[i].start).toDate();
-          appointments[i].end = moment.utc(appointments[i].end).toDate();
-          
-        }        
-        self.setState({cal_events: appointments})
-      })
-      .catch((error) =>{
-        console.log(error);
-      });
-  }
+export class MyCalendar extends Component {  
 
-  render(){
-      const {cal_events} = this.state;
-    return(
-        <div>   
-        <Calendar
-        localizer={localizer}
-        events={cal_events}
-        step={30}
-        defaultView = 'month'
-        views={['month', 'week', 'day']}
-        defaultDate ={new Date()}
-        timeslots= {3}
-        startAccessor="start"
-        endAccessor="end"
-        />
-        </div>   
-    )
-  }
-}
+   
+    render() {  
+        return (  
+            <div className="container">  
+                  <div className="row title" style={{ marginTop: "20px" }} >  
+                    <div class="col-sm-12 btn btn-info">  
+                        Calendar
+                    </div>  
+                </div>  
+                 <FullCalendar  
+                    defaultView="dayGridMonth"  
+                    header={{  
+                    left: "prev,next",  
+                    center: "title",  
+                    right: "dayGridMonth,timeGridWeek,timeGridDay"  
+                    }}  
+                    plugins={[dayGridPlugin, timeGridPlugin]}  
+                    events={events}  
+                />  
+            </div>  
+        )  
+    }  
+}  
+
 export default MyCalendar
