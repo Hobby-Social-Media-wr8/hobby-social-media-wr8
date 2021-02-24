@@ -42,3 +42,6 @@ app.post("/api/post", pc.createPost);
 app.delete('/api/post/:id', pc.deletePost)
 app.get('/api/post/:id', pc.readPost);
 
+// Events Endpoints
+app.get('/api/events', ec.getCalEvents)
+app.post('/api/event/:id', ec.addEvents)
