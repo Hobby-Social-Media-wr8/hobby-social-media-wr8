@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
+import './Blog.css'
 
 class Blog extends Component {
   constructor(props) {
@@ -58,14 +59,20 @@ class Blog extends Component {
   };
 
   render() {
+    console.log(this.props) 
+
     let { loading, search, posts, myPosts, oldestFirst } = this.state;
 
     let mappedPosts = posts.map((post) => {
       return (
         <div className="content-box dash-post-box" key={post.post_id}>
           <img src={post.img} alt={post.title} />
-          <h3>{post.title}</h3>
-          {post.author_username === this.props.username ? (
+          <div className='post-content'>
+            <p className='timestamp'>{post.date_created}</p>
+            <h3>{post.title}</h3>
+            <p>{post.content}</p>
+          </div>
+          {post.author_username === this.props.user.username ? (
             <button onClick={(_) => this.deletePost(post.post_id)}>
               delete your post
             </button>
