@@ -39,14 +39,14 @@ CREATE TABLE event_template (
   template_end_time TIMESTAMP UNIQUE
 );
 
-CREATE TABLE event (
-    event_id SERIAL PRIMARY KEY,
-    event_type_id INT,
-    event_title VARCHAR(250),
-    event_description TEXT REFERENCES event_template(template_event_description),
-    event_location VARCHAR REFERENCES event_template(template_event_location),
-    event_start_time TIMESTAMP REFERENCES event_template(template_start_time),
-    event_end_time TIMESTAMP REFERENCES event_template(template_end_time)
+CREATE TABLE cal_event (
+    cal_event_id SERIAL PRIMARY KEY,
+    cal_event_type_id INT,
+    cal_event_title VARCHAR(250),
+    cal_event_description TEXT REFERENCES event_template(template_event_description),
+    cal_event_location VARCHAR REFERENCES event_template(template_event_location),
+    cal_event_start_time TIMESTAMP REFERENCES event_template(template_start_time),
+    cal_event_end_time TIMESTAMP REFERENCES event_template(template_end_time)
 );
 
 CREATE TABLE groups (

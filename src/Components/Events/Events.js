@@ -1,15 +1,28 @@
-import React, { Component } from "react";
-import Calendar from "../Calendar/Calendar";
+import React, {Component} from 'react'
+import PostEvent from './PostEvent'
+import axios from 'axios'
+import './Events.css'
 
-class Events extends React.Component {
-  render() {
-    return (
-      <div>
-        <main>
-          <Calendar />
-        </main>
-      </div>
-    );
-  }
+class Events extends Component{
+    constructor(){
+        super()
+            this.state = {
+                data: []
+            }
+         }
+componentDidMount(){
+    axios.get('/api/events')
+    .then(res => {
+        this.setState({data: res.data})
+    })
+}
+render(){
+    return(
+        <div>
+            <h1>Events</h1>
+            <PostEvent/>
+        </div>
+    )
+ }
 }
 export default Events;
