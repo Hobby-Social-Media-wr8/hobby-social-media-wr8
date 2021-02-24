@@ -2,6 +2,7 @@ import { Component } from "react";
 import axios from "axios";
 import { connect } from "react-redux";
 import { getUser } from "../../redux/reducer";
+import "../Auth/Auth.css";
 
 class Auth extends Component {
   constructor(props) {
@@ -50,26 +51,29 @@ class Auth extends Component {
 
   render() {
     return (
-      <div>
-        <h1>Authentication Page</h1>
+      <div className="auth-container">
+        <div className="auth-flex">
         {this.state.registerToggle ? (
           <>
-            <h3>Register Here</h3>
+            <h1>Register Here</h1>
             <input
               value={this.state.username}
               name="username"
               placeholder="Username"
+              onChange={(e) => this.handleInput(e)}
             />
           </>
         ) : (
-          <h3>Login Here</h3>
+          <h1>Login</h1>
         )}
-        <input value={this.state.email} name="email" placeholder="Email" />
+        <input value={this.state.email} name="email" placeholder="Email" onChange={(e) => this.handleInput(e)} />
         <input
           value={this.state.password}
           name="password"
           type="password"
           placeholder="Password"
+          onChange={(e) => this.handleInput(e)}
+          
         />
         {this.state.registerToggle ? (
           <>
@@ -83,7 +87,7 @@ class Auth extends Component {
             <button onClick={this.handleRegister}>Register</button>
             <p>
               Already have an account?{" "}
-              <span onClick={this.handleToggle}>Login Here</span>
+              <span style ={{cursor: 'pointer', textDecoration: 'underline'}} onClick={this.handleToggle}>Login Here</span>
             </p>
           </>
         ) : (
@@ -91,10 +95,11 @@ class Auth extends Component {
             <button onClick={this.handleLogin}>Login</button>
             <p>
               Don't have an account with us yet?{" "}
-              <span onClick={this.handleToggle}>Register Here</span>
+              <span style ={{cursor: 'pointer', textDecoration: 'underline'} } onClick={this.handleToggle}>Register Here</span>
             </p>
           </>
         )}
+        </div>
       </div>
     );
   }

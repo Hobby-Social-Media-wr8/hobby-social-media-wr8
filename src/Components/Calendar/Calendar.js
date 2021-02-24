@@ -40,6 +40,9 @@ handleEventDrop = (info) => {
             console.log('change aborted')
         }
    }
+handleDateClick = (arg) => {
+    alert(arg.datestr)
+}
 
 
    render(){
@@ -47,6 +50,7 @@ handleEventDrop = (info) => {
         <div>
             <FullCalendar
             defaultView="dayGridMonth" 
+            dateClick ={this.handleDateClick}
             plugins={[dayGridPlugin, interactionPlugin]}
             editable={true}
             eventDrop={this.handleEventDrop}

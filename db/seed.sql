@@ -48,12 +48,7 @@ CREATE TABLE cal_event (
     cal_event_start_time TIMESTAMP REFERENCES event_template(template_start_time),
     cal_event_end_time TIMESTAMP REFERENCES event_template(template_end_time)
 );
-CREATE TABLE users (
-    user_id SERIAL PRIMARY KEY,
-    username VARCHAR(250) NOT NULL,
-    email VARCHAR(150) NOT NULL,
-    password VARCHAR(250) NOT NULL
-);
+
 CREATE TABLE groups (
     group_id SERIAL PRIMARY KEY, 
     group_name VARCHAR(100),
@@ -65,7 +60,7 @@ CREATE TABLE groups (
 
 );
 
-create table groupUsers(
-group_users_id int references groups(group_id),
-group_users int references users(user_id)
+CREATE TABLE groupUsers(
+  group_users_id INT REFERENCES groups(group_id),
+  group_users INT REFERENCES users(user_id)
 );
