@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
-import FullCalendar from '@fullcalendar/react'
-import dayGridPlugin from '@fullcalendar/daygrid'
+import PostEvent from './PostEvent'
 import axios from 'axios'
+import './Events.css'
 
 class Events extends Component{
     constructor(){
@@ -20,12 +20,7 @@ render(){
     return(
         <div>
             <h1>Events</h1>
-            <MyCalendar/>
-        <FullCalendar
-          plugins={[ dayGridPlugin ]}
-          initialView="dayGridMonth"
-          events = {[this.state.data]}
-        />
+            <PostEvent/>
         </div>
     )
  }
