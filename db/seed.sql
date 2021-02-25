@@ -64,3 +64,19 @@ CREATE TABLE groupUsers(
   group_users_id INT REFERENCES groups(group_id),
   group_users INT REFERENCES users(user_id)
 );
+
+create Table chat_rooms (
+  id serial PRIMARY KEY,
+  room_id varchart(100)
+  user1 int,
+  user2 int
+);
+
+create table messages (
+message_id serial primary key,
+room_id varchar(100),
+message text,
+sender_id int references users(user_id),
+date_sent TIMESTAMP default CURRENT_TIMESTAMP
+
+);

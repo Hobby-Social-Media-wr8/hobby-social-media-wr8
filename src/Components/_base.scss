@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&family=Architects+Daughter&display=swap');
+$font-stack: 'Architects Daughter', cursive;
+$font-article: 'Amatic SC', cursive;
+
+$heading-dark: rgb(7, 5, 90);
+
+$component-background-image: url('../../images/background4.jpg');
+
+$container-color: rgba(255, 255, 255, 0.705);
+
+$background: #19136D;
+$form-background: #222020d0;
+$border-radius: 10px;
+$input-radius: 5px;
+$component-background: radial-gradient(circle, rgba(157,109,72,0.5816701680672269) 8%, rgba(255,164,0,1) 100%);
+$heading-background: rgb(240, 196, 51);
+
+$link: #007dfa!important;
+$info: #007dfa!important;
+
+$heading-color: #ffffff!important;
+
+$form-width: 30%;
+
+//Buttons
+$submit: #3bbe1a!important;
+$edit: rgb(250, 225, 0)!important;
+$delete: rgb(243, 53, 53)!important;
+
+.btn {
+    font-family: $font-stack!important;
+}
+
+
+body {
+    font-family: $font-stack!important;
+}
+
+.heading {
+    font-family: $font-stack!important;
+    color: $heading-color!important;
+}
+
+.link {
+    text-decoration: none;
+}
+
+.link:active {
+    color: $submit!important;
+}
+
+.close-modal {
+    font-size: 3rem;
+    color: rgba(241, 155, 26, 0.856);
+    position: relative;
+    left: 100px;
+    margin-bottom: 5px;
+    cursor: pointer;
+}
