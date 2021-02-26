@@ -34,6 +34,10 @@
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.2",
     "redux": "^4.0.5",
+<<<<<<< HEAD
+    "redux-thunk": "^2.3.0",
+=======
+>>>>>>> main
     "socket.io": "^3.1.1",
     "socket.io-client": "^3.1.1",
     "web-vitals": "^1.1.0"
