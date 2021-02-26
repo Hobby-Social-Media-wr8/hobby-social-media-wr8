@@ -1,0 +1,77 @@
+.dash{
+    height: 100vw;
+    overflow: scroll;
+    overflow-x: hidden;
+}
+
+.dash-post-box{
+    width: 90vw;
+    height: 50vh;
+    position: relative;
+    left: 70px;
+    margin-top: 20px;
+    /* border-style: solid; */
+    box-sizing: border-box;
+
+}
+
+.dash-post-box button{
+    position: relative;
+    left: 200px;
+    bottom: 350px;
+}
+
+.post-content{
+    position: relative;
+    height: 80%;
+    width: 60%;
+    /* border-style: solid; */
+    left: 35%;
+    bottom: 90%;
+    font-size: 18px;
+    overflow: scroll;
+}
+
+.post-content h3 {
+    font-size: 36px;
+    position: relative;
+    
+}
+
+.timestamp{
+    position: relative;
+    right: 260px;
+}
+
+.author-box {
+    position: relative;
+    bottom: 93%;
+    left: 40%;
+}
+
+.dash-post-box img {
+    height: 388px;
+    width: 388px;
+    /* border-style: solid; */
+    position: relative;
+    right: 35%;
+    
+}
+
+.dash-filter {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    font-size: 20px;
+
+}
+
+.dash-filter input{
+    background: #F1FAEE;
+    height: 25px;
+}
+.dash-filter  button {
+    margin-left: 20px;
+height: 30px;
+width: 65px;
+}
