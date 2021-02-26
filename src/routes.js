@@ -17,7 +17,7 @@ export default (
     <Route path="/blog" component={Blog} />
     <Route exact path="/add-post" component={AddPost} />
     <Route path="/events" component={Events} />
-    <Route path="/chat" component={Chat} />
+    <Route path="/chat/:id" component={Chat} />
     <Route path="/message" component={Message} />
     <Route path="/groups" component={Group} />
     <Route path="/profile" component={Profile} />
