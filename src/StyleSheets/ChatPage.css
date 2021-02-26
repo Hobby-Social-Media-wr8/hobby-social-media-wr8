@@ -1,0 +1,78 @@
+.main {
+    background-color: #1D3557;
+    height: 100vh;
+}
+
+.chatHeader {
+    display: flex;
+    border-bottom: 1px solid #A8DADC;
+}
+
+.leftIcon {
+    font-size: 22px;
+    margin: 10px 20px;
+    padding: 10px;
+    color: #A8DADC;
+    border: 1px solid #A8DADC;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.friendName {
+    width: 85%;
+    height: 60px;
+    padding-left: 2rem;
+}
+
+.friendNameText {
+    color: #A8DADC;
+    font-size: 24px;
+    font-weight: bold;
+    font-family: 'Noto Sans', sans-serif;
+    line-height: 20px;
+}
+
+.chatContent {
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.chatBody {
+    width: 80%;
+    height: 85vh;
+    background-color: #fff;
+    margin: 10px auto;
+}
+
+.chatInput {
+    width: 85%;
+    margin: 5px 3px;
+    padding: 16px;
+    border: 1px solid #1d3557;
+    font-size: 16px;
+    outline: none;
+    margin-top: 75vh;
+}
+
+.sendBtn {
+    /* width: 10%; */
+    color: #A8DADC;
+    background-color: #1D3557;
+    padding: 16px;
+    border: 1px solid #1d3557;
+    font-size: 16px;
+    outline: none;
+    /* margin-top: 75vh; */
+}
+
+.colors {
+    background-color: #1D3557;
+    background-color: #A8DADC;
+    background-color: #457B9D;
+    background-color: #F1FaEE;
+}
+
+.font {
+    font-family: 'Noto Sans', sans-serif;
+}
