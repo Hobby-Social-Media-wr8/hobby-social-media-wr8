@@ -1,0 +1,86 @@
+@import '../base';
+
+.chat-wrapper {
+    // background: $component-background-image;
+    height: 100vh;
+    background-attachment: fixed;
+}
+
+.chat-container {
+    margin-top: 10px;
+    padding: 10px;;
+}
+
+.messages-container {
+    background-color: #F1FAEE;
+    border-radius: $border-radius;
+    margin-top: 70px;
+    height: 50vh;
+    overflow-y: auto;
+}
+
+.messages {
+    padding: 3px;
+}
+
+.message-display-right {
+    text-align: right;
+    padding: 15px 5px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.message-display-left {
+    text-align: left;
+    padding: 15px 5px;
+    display: flex;
+}
+
+.my-message,
+.other-message {
+    padding: 10px 8px;
+    color: white;
+}
+
+.my-message {
+    
+    border-radius: 50px 50px 0 50px;
+    background-color: rgba(10, 27, 232, 0.71);
+}
+
+.other-message {
+    text-align: left;
+    border-radius: 50px 50px 50px 0;
+    background-color: rgba(59, 216, 216, 0.77);
+}
+
+.message-username {
+    color: white;
+    font-weight: bold;
+    padding: 3px;
+}
+
+.time-stamp {
+    font-size: .5rem;
+}
+
+.chat-controls {
+    margin: 0 auto;
+    align-items: center;
+    align-content: center;
+    padding: 5px;
+    background: $container-color;
+    width: 40vw;
+    border-radius: $border-radius;
+}
+
+.message-input {
+    width: 40%;
+}
+
+.send-message-btn {
+    background: $submit;
+    color: $heading-color;
+    margin-top: 5px!important;
+    border-radius: $border-radius;
+}

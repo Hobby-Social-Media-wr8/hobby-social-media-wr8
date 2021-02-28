@@ -1,0 +1,28 @@
+.addpost-main{
+    /* border-style: solid; */
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.form-main{
+    /* border-style: solid; */
+    width: 30vw;
+    height: 35vw;
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+    align-items: center;
+}
+
+.form-main button{
+    width: 160px;
+    height: 45px;
+}
+
+.form-text-box textarea {
+    height: 160px;
+    width: 250px;
+    background: #F1FAEE;
+}
