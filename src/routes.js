@@ -5,7 +5,7 @@ import Blog from "./Components/Blog/Blog";
 import Home from "./Components/Home/Home";
 import Chat from "./Components/Chat/Chat";
 import Message from "./Components/Chat/Message";
-import Events from "./Components/Events/Events";
+// import Events from "./Components/Events/Events";
 import AddPost from './Components/Blog/AddPost'
 // import Group from "./Components/Group/Group";
 import Profile from "./Components/Profile/Profile";
@@ -23,3 +23,4 @@ export default (
     <Route path="/profile" component={Profile} />
   </Switch>
 );
+// <Route path="/events" component={Events} />
