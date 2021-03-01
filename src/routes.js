@@ -5,7 +5,7 @@ import Blog from "./Components/Blog/Blog";
 import Home from "./Components/Home/Home";
 import Chat from "./Components/Chat/Chat";
 import Message from "./Components/Chat/Message";
-// import Events from "./Components/Events/Events";
+import MyCalendar from "./Components/Calendar/MyCalendar";
 import AddPost from './Components/Blog/AddPost'
 import Group from "./Components/Group/Group";
 import Profile from "./Components/Profile/Profile";
@@ -16,7 +16,7 @@ export default (
     <Route path="/auth" component={Auth}/>
     <Route path="/blog" component={Blog} />
     <Route exact path="/add-post" component={AddPost} />
-    <Route path="/events" component={Events} />
+    <Route path="/events" component={MyCalendar} />
     <Route path="/chat/:id" component={Chat} />
     <Route path="/message" component={Message} />
     <Route path="/groups" component={Group} />
