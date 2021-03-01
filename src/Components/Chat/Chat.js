@@ -4,10 +4,8 @@ import { connect } from 'react-redux';
 import io from 'socket.io-client';
 import Container from '@material-ui/core/Container';
 import TextField from '@material-ui/core/TextField';
-import Button from '@material-ui/core/Button';
 import Box from '@material-ui/core/Box';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faPaperPlane } from '@fortawesome/free-solid-svg-icons';
+
 
 import './chat.scss';
 
@@ -96,22 +94,19 @@ class Chat extends Component {
                     ?
                     (
                         <section className="message-display-right">
+                            
                             <article className='my-message'>
-                                {obj.message}
-                                {/* <span className='time-stamp'>{moment(obj.date_sent).fromNow()}</span> */}
+                              {obj.message}
                             </article>
-                            <span className='message-username'>{obj.username}</span>
                         </section>
 
                     )
                     :
                     (
+                        
                         <section className="message-display-left">
-                            <span className='message-username'>{obj.username}</span>
+                            
                             <article className='other-message'>
-                                {/* <span className='time-stamp'>
-                                    {moment('hour').fromNow()}
-                                </span> */}
                                 {obj.message}
                             </article>
                         </section>
@@ -124,7 +119,6 @@ class Chat extends Component {
         console.log(this.props)
         return (
             <section className='chat-wrapper'>
-                {/* <Header /> */}
                 <Container className="chat-container" fixed>
                     <Container maxWidth="sm" className="messages-container">
                         {messages}
@@ -137,14 +131,13 @@ class Chat extends Component {
                             onChange={e => this.handleMessage(e.target.value)}
                             value={this.state.message}
                         />
-                        <Button
+                        <button
                             onClick={this.sendMsg}
                             className="send-message-btn"
                             variant="contained"
-                            startIcon={<FontAwesomeIcon icon={faPaperPlane} />}
                         >
                             Send
-                </Button>
+                </button>
                     </section>
 
                 </Container>
