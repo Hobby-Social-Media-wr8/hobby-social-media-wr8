@@ -20,6 +20,7 @@
     "@testing-library/jest-dom": "^5.11.9",
     "@testing-library/react": "^11.2.5",
     "@testing-library/user-event": "^12.7.1",
+    "aws-sdk": "^2.852.0",
     "axios": "^0.21.1",
     "bcryptjs": "^2.4.3",
     "dotenv": "^8.2.0",
@@ -30,16 +31,16 @@
     "node-sass": "^5.0.0",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
+    "react-dropzone": "^11.3.1",
     "react-redux": "^7.2.2",
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.2",
+    "react-spinners": "^0.10.6",
     "redux": "^4.0.5",
-<<<<<<< HEAD
     "redux-thunk": "^2.3.0",
-=======
->>>>>>> main
     "socket.io": "^3.1.1",
     "socket.io-client": "^3.1.1",
+    "uuid": "^8.3.2",
     "web-vitals": "^1.1.0"
   },
   "scripts": {

@@ -33,15 +33,15 @@
   flex-direction: column;
 }
 
-::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+.auth-container ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
   color: #F1FAEE;
   opacity: 1; /* Firefox */
 }
 
-:-ms-input-placeholder { /* Internet Explorer 10-11 */
+.auth-container :-ms-input-placeholder { /* Internet Explorer 10-11 */
   color: #F1FAEE;
 }
 
-::-ms-input-placeholder { /* Microsoft Edge */
+.auth-container ::-ms-input-placeholder { /* Microsoft Edge */
   color: #F1FAEE;
 }
