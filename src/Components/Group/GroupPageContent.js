@@ -4,23 +4,23 @@ import BandImage from "../Images/band-image.png";
 import { Link } from 'react-router-dom';
 
 export default function GroupPageContent() {
-    return (
-            <div className="contentContainer">
-                    <div className="mainHeading">
+        return (
+                <div className="contentContainer">
+                        <div className="mainHeading">
                         <h2 className="headingtxt">
                                 Group Page
                         </h2>
-                    </div>
-                    <div className="mainContainers">
-                            <div className="imagecontainer">
+                        </div>
+                        <div className="mainContainers">
+                                <div className="imagecontainer">
                                 <div className="co-heading">
                                         <p className="co-heading-text">Anything But Human</p>
                                 </div>
                                 <div className="content">
                                         <img src={BandImage} className="indicatorImage" alt="" />
                                 </div>
-                            </div>
-                            <div className="listContainer">
+                                </div>
+                                <div className="listContainer">
                                 <div className="co-heading">
                                         <p className="co-heading-text">Band Members</p>
                                 </div>
@@ -43,10 +43,10 @@ export default function GroupPageContent() {
                                                 <li className="listItems">Member 15</li>
                                         </ul>
                                 </div>
-                            </div>
-                    </div>
-                    <div className="footerBox">
-                            <div className="memberContent">
+                                </div>
+                        </div>
+                        <div className="footerBox">
+                                <div className="memberContent">
                                 <div className="memberHeading">
                                         <p className="textHeading">Needed Band Members</p>
                                 </div>
@@ -60,12 +60,12 @@ export default function GroupPageContent() {
                                         </div>
                                         <div className="btn">
                                                 <Link to="/chat" className="contactwithus">
-                                                    Contact With Us
+                                                        Contact With Us
                                                 </Link>
                                         </div>
                                 </div>
-                            </div>
-                    </div>
-            </div >
-    )
+                                </div>
+                        </div>
+                </div >
+        )
 }
