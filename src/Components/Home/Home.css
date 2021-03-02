@@ -1,14 +1,13 @@
 .home-container {
-  margin: 10px;
-  height: 100vh;
-  width: 100vw;
-  display: inline-block;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
 }
 .about-flex {
-  margin: auto;
-  padding: 10px;
-  height: 175px;
-  width: 80vw;
+  margin: 50px;
+  padding: 20px;
+  display: inline-block;
+  text-align: left;
   background-color: #457B9D;
 }
 .about-flex button {
@@ -21,10 +20,36 @@
   background-color: #1D3557;
 }
 .group-event-flex {
-  margin: 80px;
-  min-height: 500px;
+  display: flex;
+  flex-direction: row;
+  height: 100vh;
+}
+.group-flex {
+  margin: 50px;
+  max-height: 400px;
   width: 800px;
   background-color: #457B9D;
+  display: inline-block;
+}
+.group-images img{
+  margin: 20px;
+  height: 125px;
+  width: 200px;
   display: inline-flex;
+  flex-direction: row;
+}
+.event-flex {
+  margin: 50px;
+  max-height: 400px;
+  width: 800px;
+  background-color: #457B9D;
+  display: inline-block;
   justify-content: center;
+}
+.event-images img{
+  margin: 20px;
+  height: 125px;
+  width: 200px;
+  display: inline-flex;
+  flex-direction: row;
 }

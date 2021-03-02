@@ -1,6 +1,6 @@
 .profile-container {
+  margin-right: 125px;
   height: 100vh;
-  width: 100vw;
   display: inline-block;
 }
 .profile-container img {
@@ -8,9 +8,30 @@
   display: block;
   margin-left: auto;
   margin-right: auto;
-  border-radius: 45%;
+  border-radius: 50%;
+}
+.profile-container button {
+  display: block;
+  margin: auto;
+  height: 30px;
+  width: 100px;
+}
+.other-flex {
+  display: inline-flex;
+  align-items: center;
+  margin: 10px;
 }
 .interests-flex {
-  margin: 15px;
-  height: 200px;
+  margin: 30px;
+  height: 300px;
+  width: 600px;
+  background-color: #457B9D;
+}
+.interests-flex input {
+  height: 30px;
+}
+.edit-flex {
+  height: 300px;
+  width: 600px;
+  background-color: #457B9D;
 }
