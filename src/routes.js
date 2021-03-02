@@ -5,10 +5,11 @@ import Blog from "./Components/Blog/Blog";
 import Home from "./Components/Home/Home";
 import Chat from "./Components/Chat/Chat";
 import Message from "./Components/Chat/Message";
-// import Events from "./Components/Events/Events";
+import Events from "./Components/Events/Events";
 import AddPost from './Components/Blog/AddPost'
-import Group from "./Components/Group/Group";
+// import GroupsPage from "./Components/Groups/GroupsPage";
 import Profile from "./Components/Profile/Profile";
+import GroupsPage from "./Components/Groups/GroupsPage"
 
 export default (
   <Switch>
@@ -19,7 +20,7 @@ export default (
     <Route path="/events" component={Events} />
     <Route path="/chat/:id" component={Chat} />
     <Route path="/message" component={Message} />
-    <Route path="/groups" component={Group} />
+    <Route path="/groups" component={GroupsPage} />
     <Route path="/profile" component={Profile} />
   </Switch>
 );

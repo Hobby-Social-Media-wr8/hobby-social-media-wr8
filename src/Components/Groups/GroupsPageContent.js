@@ -1,9 +1,12 @@
 import React from 'react'
-import '../StyleSheets/GroupPageContainer.css'
-import BandImage from "../Images/band-image.png";
+// import '../StyleSheets/GroupPageContainer.css'
 import { Link } from 'react-router-dom';
+import "../../StyleSheets/GroupPageContainer.css"
+import {v4 as randomString} from 'uuid';
+import Dropzone from 'react-dropzone';
+import {GridLoader} from 'react-spinners';
 
-export default function GroupPageContent() {
+export default function GroupsPageContent() {
         return (
                 <div className="contentContainer">
                         <div className="mainHeading">
@@ -15,9 +18,6 @@ export default function GroupPageContent() {
                                 <div className="imagecontainer">
                                 <div className="co-heading">
                                         <p className="co-heading-text">Anything But Human</p>
-                                </div>
-                                <div className="content">
-                                        <img src={BandImage} className="indicatorImage" alt="" />
                                 </div>
                                 </div>
                                 <div className="listContainer">
