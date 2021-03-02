@@ -1,0 +1,19 @@
+.header-container {
+  float: left;
+  height: 100vh;
+  width: 200px;
+}
+.icon-nav-icon {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+.nav-links {
+  text-decoration: none;
+  color: #F1FAEE;
+}
+.nav-links:hover, .nav-links:active {
+  text-decoration: none;
+  color: #85182A;
+}

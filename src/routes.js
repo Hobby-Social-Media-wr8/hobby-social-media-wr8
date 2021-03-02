@@ -7,7 +7,7 @@ import Chat from "./Components/Chat/Chat";
 import Message from "./Components/Chat/Message";
 import MyCalendar from "./Components/Calendar/MyCalendar";
 import AddPost from './Components/Blog/AddPost'
-// import Group from "./Components/Group/Group";
+// import Group from "./Components/Group/GroupPage";
 import Profile from "./Components/Profile/Profile";
 
 export default (
@@ -23,5 +23,3 @@ export default (
     <Route path="/profile" component={Profile} />
   </Switch>
 );
-// <Route path="/events" component={Events} />
-//  <Route path="/groups" component={Group} />   

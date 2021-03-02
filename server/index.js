@@ -77,6 +77,8 @@ app.get("/api/logout", authCtrl.logout);
 
 app.get("/api/profile/:id", profCtrl.getUserProfile);
 app.put("/api/profile/:profile_id", profCtrl.editInfo);
+app.put("/api/profile/:profile_id", profCtrl.editInterests);
+
 // POST/BLOG ENDPOINTS
 app.post("/api/post", pc.createPost);
 app.delete('/api/post/:user_id', pc.deletePost)
