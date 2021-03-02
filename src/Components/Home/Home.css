@@ -1,14 +1,12 @@
 .home-container {
-  margin: 10px;
-  height: 100vh;
-  width: 100vw;
-  display: inline-block;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
 }
 .about-flex {
-  margin: auto;
+  margin: 50px;
   padding: 10px;
-  height: 175px;
-  width: 80vw;
+  display: inline-block;
   background-color: #457B9D;
 }
 .about-flex button {
@@ -21,8 +19,23 @@
   background-color: #1D3557;
 }
 .group-event-flex {
-  margin: 80px;
+  display: flex;
+  flex-direction: row;
+  height: 100vh;
+}
+.group-flex {
+  margin: 50px;
   min-height: 500px;
+  max-height: 700px;
+  width: 800px;
+  background-color: #457B9D;
+  display: inline-flex;
+  justify-content: center;
+}
+.event-flex {
+  margin: 50px;
+  min-height: 500px;
+   max-height: 700px;
   width: 800px;
   background-color: #457B9D;
   display: inline-flex;
