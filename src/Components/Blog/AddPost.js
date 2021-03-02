@@ -10,9 +10,9 @@ class AddPost extends Component {
     super();
     this.state = {
       url:
-        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSsTKtSTmkgdKbSxKz74cz18XCvIQQ5SBLgJw&usqp=CAU",
+        "https://i.stack.imgur.com/y9DpT.jpg",
       title: "",
-      img: "",
+      // img: "",
       content: "",
       isUploading: false,
     };
@@ -72,8 +72,9 @@ class AddPost extends Component {
   };
 
   submit = () => {
+    const {title, url, content} = this.state
     axios
-      .post("/api/post", this.state)
+      .post("/api/post", {title, url, content})
       .then(() => {
         this.props.history.push("/blog");
       })
@@ -81,6 +82,7 @@ class AddPost extends Component {
   };
 
   render() {
+    // console.log(this.state)
     const { url, isUploading } = this.state;
     return (
       <div className="addpost-main">

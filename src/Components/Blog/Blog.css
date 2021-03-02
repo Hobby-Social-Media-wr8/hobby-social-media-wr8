@@ -1,77 +1,201 @@
-.dash{
-    height: 100vw;
-    overflow: scroll;
-    overflow-x: hidden;
-}
-
-.dash-post-box{
-    width: 90vw;
-    height: 50vh;
-    position: relative;
-    left: 70px;
-    margin-top: 20px;
-    /* border-style: solid; */
-    box-sizing: border-box;
+.dash {
+  height: 100vw;
+  overflow: scroll;
+  overflow-x: hidden;
+  text-transform: none;
 
 }
 
-.dash-post-box button{
-    position: relative;
-    left: 200px;
-    bottom: 350px;
+.dash-post-box {
+  width: 90vw;
+  height: 50vh;
+  position: relative;
+  left: 70px;
+  margin-top: 20px;
+  box-sizing: border-box;
 }
 
-.post-content{
-    position: relative;
-    height: 80%;
-    width: 60%;
-    /* border-style: solid; */
-    left: 35%;
-    bottom: 90%;
-    font-size: 18px;
-    overflow: scroll;
+.dash-post-box button {
+  position: relative;
+  left: 200px;
+  bottom: 350px;
+}
+
+.post-content {
+  position: relative;
+  height: 80%;
+  width: 60%;
+  left: 35%;
+  bottom: 90%;
+  font-size: 18px;
+  overflow: scroll;
 }
 
 .post-content h3 {
-    font-size: 36px;
-    position: relative;
-    
+  font-size: 36px;
+  position: relative;
 }
 
-.timestamp{
-    position: relative;
-    right: 260px;
+.timestamp {
+  position: relative;
+  right: 260px;
 }
 
 .author-box {
-    position: relative;
-    bottom: 93%;
-    left: 40%;
+  position: relative;
+  bottom: 93%;
+  left: 40%;
 }
 
 .dash-post-box img {
-    height: 388px;
-    width: 388px;
-    /* border-style: solid; */
-    position: relative;
-    right: 35%;
-    
+  height: 388px;
+  width: 388px;
+  position: relative;
+  right: 35%;
 }
 
 .dash-filter {
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-    font-size: 20px;
-
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  font-size: 20px;
 }
 
-.dash-filter input{
-    background: #F1FAEE;
-    height: 25px;
+.dash-filter input {
+  background: #f1faee;
+  height: 25px;
 }
-.dash-filter  button {
+.dash-filter button {
+  margin-left: 20px;
+  height: 30px;
+  width: 65px;
+}
+                            /* 1ST RESPONSIVE DESIGN */
+@media (max-width: 768px) {
+  .dash-post-box {
+    width: 90vw;
+    height: 35vh;
+    position: relative;
+    left: 70px;
+    margin-top: 10px;
+    box-sizing: border-box;
+  }
+
+  .dash-post-box img {
+    height: 280px;
+    width: 280px;
+    position: relative;
+    right: 35%;
+  }
+
+  .post-content h3 {
+    font-size: 24px;
+    position: relative;
+  }
+
+  .post-content {
+    height: 25vh;
+    margin-top: 50px;
+    box-sizing: content-box;
+  }
+
+  .timestamp {
+    display: none;
+    font-size: 18px;
+    position: relative;
+    right: 260px;
+  }
+
+  .dash-filter button {
     margin-left: 20px;
-height: 30px;
-width: 65px;
+    height: 25px;
+    width: 53px;
+  }
+
+  .dash-check-box {
+    width: 100px;
+  }
+
+  .dash-check-box p {
+    font-size: 16px;
+  }
+
+  .add-post-button h1 {
+    font-size: 25px;
+  }
+
+  .dash {
+    height: 120vh;
+  }
+}
+
+                            /* 2ND RESPONSIVE DESIGN */
+
+@media (max-width: 411px) {
+
+    .dash-post-box img {
+        height: 150px;
+        width: 150px;
+        position: relative;
+        top: 30px;
+        right: 48%;
+      }
+
+      .dash-post-box {
+        width: 80vw;
+        /* border-style: solid; */
+        height: 28vh;
+        position: relative;
+        left: 65px;
+        margin-top: 10px;
+        box-sizing: border-box;
+      }
+
+      .post-content h3 {
+        font-size: 16px;
+        position: relative;
+      }
+
+      .post-content {
+        position: relative;
+        height: 90%;
+        width: 55%;
+        left: 35%;
+        bottom: 90%;
+        font-size: 12px;
+        overflow: scroll;
+      }
+
+
+      .add-post-button h1 {
+        font-size: 20px;
+      }
+
+      .dash-check-box {
+        width: 80px;
+      }
+
+      .dash-check-box p {
+        font-size: 12px;
+      }
+
+      .dash-filter button {
+        margin-left: 5px;
+        margin-top: 10px;
+        height: 25px;
+        width: 53px;
+      }
+
+      .author-box p{
+          font-size: 14px;
+          width: 100px;
+          position: relative;
+          bottom: 20px;
+          left: 55px;
+          text-transform: none;
+        /* border-style: solid; */
+
+      }
+
+
 }
