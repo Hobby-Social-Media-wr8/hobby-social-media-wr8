@@ -3,18 +3,18 @@ module.exports = {
     const { id } = req.params;
     const db = req.app.get("db");
 
-    db.profile
+    await db.profile
       .get_user_profile(id)
       .then((userProfile) => res.status(200).send(userProfile))
       .catch((err) => res.status(500).send(err));
   },
   editInfo: async (req, res) => {
-    const { id } = req.params;
+    const { profile_id } = req.params;
     const { basic_info } = req.body;
     const db = req.app.get("db");
 
-    db.profile
-      .edit_info(basic_info, id)
+    await db.profile
+      .edit_info(basic_info, profile_id)
       .then((userProfile) => res.status(200).send(userProfile))
       .catch((err) => res.status(500).send(err));
   },
