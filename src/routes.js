@@ -24,3 +24,4 @@ export default (
   </Switch>
 );
 // <Route path="/events" component={Events} />
+//  <Route path="/groups" component={Group} />   

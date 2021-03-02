@@ -13,25 +13,17 @@ class Profile extends Component {
     super(props);
 
     this.state = {
-      url: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSsTKtSTmkgdKbSxKz74cz18XCvIQQ5SBLgJw&usqp=CAU',
+      url: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRgUNaoFwOOa3sOnMoc8CVUJ65bhS822etxVQ&usqp=CAU',
       interests: "",
       basicInfo: "",
       isUploading: false,
       editInfoToggle: false,
     };
   }
-  handleInput = (event) => {
-    this.setState({ [event.target.name]: event.target.value });
-  };
-  handleEditInfoToggle = () => {
-    this.setState({ editView: !this.state.editInfoToggle });
-  };
+
   getSignedRequest = ([file]) => {
     this.setState({ isUploading: true });
-    // We are creating a file name that consists of a random string, and the name of the file that was just uploaded with the spaces removed and hyphens inserted instead. This is done using the .replace function with a specific regular expression. This will ensure that each file uploaded has a unique name which will prevent files from overwriting other files due to duplicate names.
     const fileName = `${randomString()}-${file.name.replace(/\s/g, '-')}`;
-
-    // We will now send a request to our server to get a "signed url" from Amazon. We are essentially letting AWS know that we are going to upload a file soon. We are only sending the file-name and file-type as strings. We are not sending the file itself at this point.
     axios
       .get('/api/signs3', {
         params: {
@@ -76,15 +68,20 @@ class Profile extends Component {
         }
       });
   };
-
+  handleInput = (event) => {
+    this.setState({ [event.target.name]: event.target.value });
+  };
+  handleEditInfoToggle = () => {
+    this.setState({ editInfoToggle: !this.state.editInfoToggle });
+  };
   editInfo = () => {
     axios
-      .put(`/api/profile/${this.props.profile.profile_user_id}`, {
+      .put(`/api/profile/${this.props.profile.profile_id}`, {
         basicInfo: this.state.basicInfo,
       })
       .then((res) => {
         this.props.getUser(res.data[0]);
-        this.handleEditView();
+        this.handleEditInfoToggle();
         this.setState({ basicInfo: "" });
       })
       .catch((err) => console.log(err));
@@ -116,7 +113,7 @@ class Profile extends Component {
               width: 160,
               height: 80,
               borderWidth: 5,
-              marginTop: 10,
+              margin: 10,
               borderColor: 'gray',
               borderStyle: 'dashed',
               borderRadius: 5,
@@ -128,23 +125,20 @@ class Profile extends Component {
             </div>
           )}
          </Dropzone>
-        
-        <div className='interests-flex'>
+        <button onClick={this.handleLogout}>Logout</button>
+        <div className='other-flex'>
+          <section className='interests-flex'>
           <input
           value={this.state.interests}
           name="interests"
           placeholder="List your interests here!"
           onChange={(e) => this.handleInput(e)}
         />
-          <div>
-            <input
-          value={this.state.basicInfo}
-          name="basicInfo"
-          placeholder="Create your basic info here!"
-          onChange={(e) => this.handleInput(e)}
-        />
-        {!this.state.editInfoToggle ? (
-          <div>
+        </section>  
+        <section className='edit-flex'>
+          <p>{this.state.basicInfo}</p>
+          {!this.state.editInfoToggle ? (
+          <div >
             <p>{this.state.basicInfo}</p>
             <button onClick={this.handleEditInfoToggle}>Edit Info</button>
           </div>
@@ -159,9 +153,11 @@ class Profile extends Component {
             <button onClick={this.editInfo}>Submit Info</button>
           </div>
         )}
-          </div>
-        <button onClick={this.handleLogout}>Logout</button>
+        </section>
+        
+        
         </div>
+        
       </div>
     );
   }
@@ -171,4 +167,3 @@ const mapStateToProps = (reduxState) => reduxState;
 export default connect(mapStateToProps, { getUser, clearUser })(Profile);
 
 // want the ability to edit interests box?
-// still need to put profile picture in -amazon s3
