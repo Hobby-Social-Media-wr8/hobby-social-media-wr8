@@ -1,7 +1,7 @@
 import React from 'react'
-import "../StyleSheets/GroupPage.css"
-import { AiOutlineMenu } from "react-icons/ai";
-import GroupPageContent from './GroupPageContent';
+import "../../StyleSheets/GroupPage.css"
+// import { AiOutlineMenu } from "react-icons/ai";
+import GroupPageContent from '../Group/GroupPageContent';
 
 function GroupPage() {
     return (

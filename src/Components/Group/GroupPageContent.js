@@ -1,6 +1,5 @@
 import React from 'react'
-import '../StyleSheets/GroupPageContainer.css'
-import BandImage from "../Images/band-image.png";
+import '../../StyleSheets/GroupPageContainer.css'
 import { Link } from 'react-router-dom';
 
 export default function GroupPageContent() {
@@ -17,7 +16,7 @@ export default function GroupPageContent() {
                                         <p className="co-heading-text">Anything But Human</p>
                                 </div>
                                 <div className="content">
-                                        <img src={BandImage} className="indicatorImage" alt="" />
+                                        <img className="indicatorImage" alt="" />
                                 </div>
                             </div>
                             <div className="listContainer">
