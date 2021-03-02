@@ -14,10 +14,11 @@ class Profile extends Component {
 
     this.state = {
       url: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRgUNaoFwOOa3sOnMoc8CVUJ65bhS822etxVQ&usqp=CAU',
-      interests: "",
-      basicInfo: "",
+      interests: "here are some interests for testing",
+      basicInfo: "here is some info for testing",
       isUploading: false,
       editInfoToggle: false,
+      editInterestToggle: false
     };
   }
 
@@ -86,6 +87,21 @@ class Profile extends Component {
       })
       .catch((err) => console.log(err));
   };
+  handleEditInterestsToggle = () => {
+    this.setState({editInterestToggle: !this.state.editInterestToggle})
+  };
+  editInterests = () => {
+    axios
+      .put(`/api/profile/${this.props.profile_id}`, {
+        interests: this.state.interests,
+      })
+      .then((res) => {
+        this.props.getUser(res.data[0]);
+        this.handleEditInterestsToggle();
+        this.setState({interests: ""});
+      })
+      .catch((err) => console.log(err));
+  }
   handleLogout = () => {
     axios
       .get("/api/logout")
@@ -128,15 +144,24 @@ class Profile extends Component {
         <button onClick={this.handleLogout}>Logout</button>
         <div className='other-flex'>
           <section className='interests-flex'>
-          <input
-          value={this.state.interests}
-          name="interests"
-          placeholder="List your interests here!"
-          onChange={(e) => this.handleInput(e)}
-        />
+         {!this.state.editInterestToggle ? (
+          <div >
+            <p>{this.state.interests}</p>
+            <button onClick={this.handleEditInterestsToggle}>Edit Interests</button>
+          </div>
+        ) : (
+          <div>
+            <input
+              value={this.state.interests}
+              name="interests"
+              placeholder="Create your interests here!"
+              onChange={(e) => this.handleInput(e)}
+            />
+            <button onClick={this.handleEditInterestsToggle}>Submit Interests</button>
+          </div>
+        )}
         </section>  
         <section className='edit-flex'>
-          <p>{this.state.basicInfo}</p>
           {!this.state.editInfoToggle ? (
           <div >
             <p>{this.state.basicInfo}</p>
@@ -150,7 +175,7 @@ class Profile extends Component {
               placeholder="Create your basic info here!"
               onChange={(e) => this.handleInput(e)}
             />
-            <button onClick={this.editInfo}>Submit Info</button>
+            <button onClick={this.handleEditInfoToggle}>Submit Info</button>
           </div>
         )}
         </section>
@@ -165,5 +190,3 @@ class Profile extends Component {
 const mapStateToProps = (reduxState) => reduxState;
 
 export default connect(mapStateToProps, { getUser, clearUser })(Profile);
-
-// want the ability to edit interests box?

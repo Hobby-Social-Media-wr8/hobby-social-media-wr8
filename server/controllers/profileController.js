@@ -18,6 +18,16 @@ module.exports = {
       .then((userProfile) => res.status(200).send(userProfile))
       .catch((err) => res.status(500).send(err));
   },
+  editInterests: async (req, res) => {
+    const {profile_id} = req.params;
+    const {interests_lists} = req.body;
+    const db = req.app.get('db')
+
+    await db.profile
+    .edit_interests(interests_list, profile_id)
+    .then((userProfile) => res.status(200).send(userProfile))
+    .catch((err) => res.status(500).send(err))
+  },
 };
 
 // do i need to call it profile_user_id or does my sql file do that service and i'm just calling it whatever i need for the endpoint?

@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import FullCalendar from "@fullcalendar/react";  
 import dayGridPlugin from "@fullcalendar/daygrid";  
 import timeGridPlugin from "@fullcalendar/timegrid";  
-import './MyCalendar.css'
+import '../Calendar/Calendar.css';
 import interactionPlugin from '@fullcalendar/interaction'
 
 // import "@fullcalendar/core/main.css";  
