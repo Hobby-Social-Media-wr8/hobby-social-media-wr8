@@ -1,13 +1,13 @@
 module.exports = {
     createPost: (req, res) => {
         const {user_id} = req.session.user
-        const {title, img, content}=req.body
+        const {title, url, content}=req.body
         db = req.app.get('db')
         date = new Date
         console.log(user_id)
 
         if(user_id) {
-            db.blog.create_post([user_id, title, img, content, date])
+            db.blog.create_post([user_id, title, url, content, date])
             return res.sendStatus(200)
         }
         res.sendStatus(403)
