@@ -1,9 +1,5 @@
 import React from 'react'
-<<<<<<< HEAD:src/Components/Groups/GroupsPageContent.js
-// import '../StyleSheets/GroupPageContainer.css'
-=======
 import '../../StyleSheets/GroupPageContainer.css'
->>>>>>> main:src/Components/Groups/GroupPageContent.js
 import { Link } from 'react-router-dom';
 import "../../StyleSheets/GroupPageContainer.css"
 import {v4 as randomString} from 'uuid';
@@ -23,11 +19,8 @@ export default function GroupsPageContent() {
                                 <div className="co-heading">
                                         <p className="co-heading-text">Anything But Human</p>
                                 </div>
-<<<<<<< HEAD:src/Components/Groups/GroupsPageContent.js
-=======
                                 <div className="content">
                                         <img className="indicatorImage" alt="" />
->>>>>>> main:src/Components/Groups/GroupPageContent.js
                                 </div>
                                 <div className="listContainer">
                                 <div className="co-heading">
