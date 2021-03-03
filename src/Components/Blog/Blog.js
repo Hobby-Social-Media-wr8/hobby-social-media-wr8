@@ -122,7 +122,7 @@ class Blog extends Component {
               type="checkbox"
             />
           </div>
-          <Link to="/add-post" style={{ textDecoration: "none" }}>
+          <Link to="/add-post" className='add-post-button' style={{ textDecoration: "none" }}>
             <h1 style={{ color: "white" }}>Add Post+</h1>
           </Link>
         </div>

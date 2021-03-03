@@ -1,26 +1,35 @@
 import React from 'react'
-import '../StyleSheets/GroupPageContainer.css'
-import BandImage from "../Images/band-image.png";
+<<<<<<< HEAD:src/Components/Groups/GroupsPageContent.js
+// import '../StyleSheets/GroupPageContainer.css'
+=======
+import '../../StyleSheets/GroupPageContainer.css'
+>>>>>>> main:src/Components/Groups/GroupPageContent.js
 import { Link } from 'react-router-dom';
+import "../../StyleSheets/GroupPageContainer.css"
+import {v4 as randomString} from 'uuid';
+import Dropzone from 'react-dropzone';
+import {GridLoader} from 'react-spinners';
 
-export default function GroupPageContent() {
-    return (
-            <div className="contentContainer">
-                    <div className="mainHeading">
+export default function GroupsPageContent() {
+        return (
+                <div className="contentContainer">
+                        <div className="mainHeading">
                         <h2 className="headingtxt">
                                 Group Page
                         </h2>
-                    </div>
-                    <div className="mainContainers">
-                            <div className="imagecontainer">
+                        </div>
+                        <div className="mainContainers">
+                                <div className="imagecontainer">
                                 <div className="co-heading">
                                         <p className="co-heading-text">Anything But Human</p>
                                 </div>
+<<<<<<< HEAD:src/Components/Groups/GroupsPageContent.js
+=======
                                 <div className="content">
-                                        <img src={BandImage} className="indicatorImage" alt="" />
+                                        <img className="indicatorImage" alt="" />
+>>>>>>> main:src/Components/Groups/GroupPageContent.js
                                 </div>
-                            </div>
-                            <div className="listContainer">
+                                <div className="listContainer">
                                 <div className="co-heading">
                                         <p className="co-heading-text">Band Members</p>
                                 </div>
@@ -43,10 +52,10 @@ export default function GroupPageContent() {
                                                 <li className="listItems">Member 15</li>
                                         </ul>
                                 </div>
-                            </div>
-                    </div>
-                    <div className="footerBox">
-                            <div className="memberContent">
+                                </div>
+                        </div>
+                        <div className="footerBox">
+                                <div className="memberContent">
                                 <div className="memberHeading">
                                         <p className="textHeading">Needed Band Members</p>
                                 </div>
@@ -60,12 +69,12 @@ export default function GroupPageContent() {
                                         </div>
                                         <div className="btn">
                                                 <Link to="/chat" className="contactwithus">
-                                                    Contact With Us
+                                                        Contact With Us
                                                 </Link>
                                         </div>
                                 </div>
-                            </div>
-                    </div>
-            </div >
-    )
+                                </div>
+                        </div>
+                </div >
+        )
 }
