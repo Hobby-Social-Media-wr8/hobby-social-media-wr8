@@ -5,18 +5,21 @@
 }
 .about-flex {
   margin: 50px;
-  padding: 10px;
+  padding: 20px;
   display: inline-block;
+  text-align: left;
   background-color: #457B9D;
+  bottom: 20px;
 }
 .about-flex button {
   height: 40px;
   width: 150px;
   float: right;
   border-radius: 10px;
+  border-width: thin;
 }
 .about-flex button:hover {
-  background-color: #1D3557;
+  background-color: #323c4b;
 }
 .group-event-flex {
   display: flex;
@@ -25,19 +28,30 @@
 }
 .group-flex {
   margin: 50px;
-  min-height: 500px;
-  max-height: 700px;
+  max-height: 400px;
   width: 800px;
   background-color: #457B9D;
+  display: inline-block;
+}
+.group-images img{
+  margin: 20px;
+  height: 125px;
+  width: 200px;
   display: inline-flex;
-  justify-content: center;
+  flex-direction: row;
 }
 .event-flex {
   margin: 50px;
-  min-height: 500px;
-   max-height: 700px;
+  max-height: 400px;
   width: 800px;
   background-color: #457B9D;
-  display: inline-flex;
+  display: inline-block;
   justify-content: center;
+}
+.event-images img{
+  margin: 20px;
+  height: 125px;
+  width: 200px;
+  display: inline-flex;
+  flex-direction: row;
 }
