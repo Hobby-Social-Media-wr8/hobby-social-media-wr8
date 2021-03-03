@@ -69,5 +69,6 @@ export default function GroupsPageContent() {
                                 </div>
                         </div>
                 </div >
+                </div>
         )
 }

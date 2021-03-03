@@ -11,7 +11,7 @@
   height: 50vh;
   position: relative;
   left: 70px;
-  margin-top: 20px;
+  margin-top: 30px;
   box-sizing: border-box;
 }
 
@@ -25,7 +25,7 @@
   position: relative;
   height: 80%;
   width: 60%;
-  left: 35%;
+  left: 25%;
   bottom: 90%;
   font-size: 18px;
   overflow: scroll;
@@ -44,14 +44,14 @@
 .author-box {
   position: relative;
   bottom: 93%;
-  left: 40%;
+  left: 30%;
 }
 
 .dash-post-box img {
-  height: 388px;
-  width: 388px;
+  height: 320px;
+  width: 320px;
   position: relative;
-  right: 35%;
+  right: 45%;
 }
 
 .dash-filter {

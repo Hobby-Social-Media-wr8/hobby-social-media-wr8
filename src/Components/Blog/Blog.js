@@ -59,7 +59,7 @@ class Blog extends Component {
   };
 
   render() {
-    console.log(this.props) 
+     
 
     let { loading, search, posts, myPosts, oldestFirst } = this.state;
 
@@ -78,7 +78,17 @@ class Blog extends Component {
             </button>
           ) : (
             <div className="author-box">
-              <p>by {post.author_username}</p>
+            <Link to={`/chat/${post.author_id}`}
+            style={{ textDecoration: "none" }}
+            >
+
+              <p
+            style={{ color: "white" }}
+              
+              >Start Chat</p>
+            </Link>
+            <p
+            >by {post.author_username}</p>
             </div>
           )}
         </div>
