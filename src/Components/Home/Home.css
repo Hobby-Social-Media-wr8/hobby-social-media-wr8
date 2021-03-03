@@ -1,24 +1,26 @@
 .home-container {
   margin: 10px;
-  height: 100vh;
+  height: 250vh;
   width: 100vw;
   display: inline-block;
 }
 .about-flex {
-  margin: auto;
+  margin: 100px 0 0 100px;
   padding: 10px;
-  height: 175px;
+  height: 200px;
   width: 80vw;
   background-color: #457B9D;
+  bottom: 20px;
 }
 .about-flex button {
   height: 40px;
   width: 150px;
   float: right;
   border-radius: 10px;
+  border-width: thin;
 }
 .about-flex button:hover {
-  background-color: #1D3557;
+  background-color: #323c4b;
 }
 .group-event-flex {
   margin: 80px;
