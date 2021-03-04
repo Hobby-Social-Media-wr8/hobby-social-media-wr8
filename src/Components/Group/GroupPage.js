@@ -1,21 +1,26 @@
-import React from 'react'
+import {Component} from 'react'
 import "../../StyleSheets/GroupPage.css"
 // import { AiOutlineMenu } from "react-icons/ai";
 import GroupPageContent from '../Group/GroupPageContent';
 
-function GroupPage() {
-    return (
-            <>
-                    <div className="groupContainer">
-                            <div className="headercontent">
-                                <div className="heading">
-                                        <h1 className="LogoText">Band Social</h1>
+class GroupPage extends Component{
+        constructor(){
+                super()
+                this.state = {}
+        }
+        render(){
+                return (
+                        <div className='groups-container'>
+                                <div className='groups-flex'>
+                                   <GroupPageContent />        
                                 </div>
-                            </div>
-                    </div>
-                    <GroupPageContent />
-            </>
-    )
+                                  
+                        </div>
+                
+        
+                )    
+        }
+    
 }
 
-export default GroupPage
+export default GroupPage;

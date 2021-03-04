@@ -75,9 +75,9 @@ app.get("/api/logout", authCtrl.logout);
 
 // OTHER ENDPOINTS
 
-app.get("/api/profile/:id", profCtrl.getUserProfile);
-app.put("/api/profile/:profile_id", profCtrl.editInfo);
-app.put("/api/profile/:profile_id", profCtrl.editInterests);
+app.get("/api/profile/:profile_user_id", profCtrl.getUserProfile);
+app.put("/api/editinfo/:profile_user_id", profCtrl.editInfo);
+app.put("/api/editinterests/:profile_user_id", profCtrl.editInterests);
 
 // POST/BLOG ENDPOINTS
 app.post("/api/post", pc.createPost);

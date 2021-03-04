@@ -1,39 +1,5 @@
-.groupContainer {
-    margin: 0;
-    padding: 0;
-    height: auto;
-    overflow-y: hidden;
-    background-color: #1D3557;
-}
 
-.headercontent {
-    width: 100%;
-    height: 100px;
-    background-color: transparent;
-    display: flex;
-}
 
-.heading {
-    width: 85%;
-    padding-left: 7%;
-    line-height: 55px;
-}
-
-.LogoText {
-    color: #F1FaEE;
-    font-family: 'Noto Sans', sans-serif;
-}
-
-.hamburger {
-    width: 15%;
-    justify-content: center;
-    text-align: center;
-}
-
-.burger {
-    color: #F1FaEE;
-    padding: 10px;
-    cursor: pointer;
-    font-size: 26px;
-    margin-top: 25px;
+.groups-container {
+    display: inline-block;
 }
