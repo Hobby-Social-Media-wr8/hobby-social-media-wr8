@@ -1,12 +1,18 @@
-import React from 'react'
+import {Component} from 'react'
 import '../../StyleSheets/GroupPageContainer.css'
 import { Link } from 'react-router-dom';
 import "../../StyleSheets/GroupPageContainer.css"
 import {v4 as randomString} from 'uuid';
 import Dropzone from 'react-dropzone';
 import {GridLoader} from 'react-spinners';
+import { render } from '@testing-library/react';
 
-export default function GroupPageContent() {
+export default class GroupPageContent extends Component {
+        constructor(props) {
+                super(props);
+        }
+        render(){
+        console.log(this.props.groups)
     return (
             <div className="contentContainer">
                     <div className="mainContainers">
@@ -21,7 +27,7 @@ export default function GroupPageContent() {
                                 </div>
                                 <div className="list-content">
                                         <ul className="unordered">
-                                                <li className="listItems">Member 01</li>
+                                                <li className="listItems">Michalin (Drums) </li>
                                                 <li className="listItems">Member 02</li>
                                                 <li className="listItems">Member 03</li>
                                                 <li className="listItems">Member 04</li>
@@ -64,4 +70,5 @@ export default function GroupPageContent() {
                 </div >
                 
         )
+    }
 }

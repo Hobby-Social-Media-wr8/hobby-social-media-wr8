@@ -7,9 +7,9 @@ import Chat from "./Components/Chat/Chat";
 import Message from "./Components/Chat/Message";
 import MyCalendar from "./Components/Calendar/MyCalendar";
 import AddPost from './Components/Blog/AddPost'
-import GroupPage from "./Components/Group/GroupPage";
 import Profile from "./Components/Profile/Profile";
 import GroupsPage from "./Components/Groups/GroupsPage"
+import CreateGroup from "./Components/Groups/CreateGroup"
 
 export default (
   <Switch>
@@ -20,7 +20,8 @@ export default (
     <Route path="/events" component={MyCalendar} />
     <Route path="/chat/:id" component={Chat} />
     <Route path="/message" component={Message} />
-    <Route path="/groups" component={GroupPage} />
+    <Route path="/groups" component={GroupsPage} />
     <Route path="/profile" component={Profile} />
+    <Route path="/creategroup" component={CreateGroup} />
   </Switch>
 );
