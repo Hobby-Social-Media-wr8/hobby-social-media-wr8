@@ -13,15 +13,18 @@ class Profile extends Component {
     super(props);
 
     this.state = {
+      profile: [],
       url: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRgUNaoFwOOa3sOnMoc8CVUJ65bhS822etxVQ&usqp=CAU',
-      interests: "here are some interests for testing",
-      basicInfo: "here is some info for testing",
+      interests: "",
+      basicInfo: "",
       isUploading: false,
       editInfoToggle: false,
       editInterestToggle: false
     };
   }
-
+  componentDidMount(){
+    this.getUserProfile()
+  }
   getSignedRequest = ([file]) => {
     this.setState({ isUploading: true });
     const fileName = `${randomString()}-${file.name.replace(/\s/g, '-')}`;
@@ -40,14 +43,12 @@ class Profile extends Component {
         console.log(err);
       });
   };
-
   uploadFile = (file, signedRequest, url) => {
     const options = {
       headers: {
         'Content-Type': file.type,
       },
     };
-
     axios
       .put(signedRequest, file, options)
       .then(response => {
@@ -69,39 +70,59 @@ class Profile extends Component {
         }
       });
   };
+
+
   handleInput = (event) => {
     this.setState({ [event.target.name]: event.target.value });
-  };
+  };  
+
+
+  getUserProfile = () => {
+    axios.get(`/api/profile/${this.props.user.user_id}`)
+      .then(res => {
+        console.log(res.data)
+        this.setState({basicInfo: res.data[0].basic_info, interests: res.data[0].interests_list, url: res.data[0].img_url})
+      })
+      .catch(err => console.log(err))
+  }
+
+
   handleEditInfoToggle = () => {
     this.setState({ editInfoToggle: !this.state.editInfoToggle });
   };
   editInfo = () => {
+    console.log(this.props)
     axios
-      .put(`/api/profile/${this.props.profile.profile_id}`, {
-        basicInfo: this.state.basicInfo,
+      .put(`/api/editinfo/${this.props.user.user_id}`, {
+        basic_info: this.state.basicInfo,
       })
       .then((res) => {
-        this.props.getUser(res.data[0]);
+        console.log(res.data)
+        this.setState({basicInfo: res.data[0].basic_info, interests: res.data[0].interests_list, url: res.data[0].img_url})
         this.handleEditInfoToggle();
-        this.setState({ basicInfo: "" });
       })
       .catch((err) => console.log(err));
   };
+
+
   handleEditInterestsToggle = () => {
     this.setState({editInterestToggle: !this.state.editInterestToggle})
   };
   editInterests = () => {
+    console.log(this.props)
     axios
-      .put(`/api/profile/${this.props.profile_id}`, {
-        interests: this.state.interests,
+      .put(`/api/editinterests/${this.props.user.user_id}`, {
+        interests_list: this.state.interests,
       })
       .then((res) => {
-        this.props.getUser(res.data[0]);
+        console.log(res.data)
+        this.setState({interests: res.data[0].basic_info, interests: res.data[0].interests_list, url: res.data[0].img_url})
         this.handleEditInterestsToggle();
-        this.setState({interests: ""});
       })
       .catch((err) => console.log(err));
-  }
+  };
+
+
   handleLogout = () => {
     axios
       .get("/api/logout")
@@ -112,6 +133,7 @@ class Profile extends Component {
       .catch((err) => console.log(err));
   };
   render() {
+    console.log(this.props)
     const {url, isUploading} = this.state;
     return (
       <div className="profile-container">
@@ -152,16 +174,16 @@ class Profile extends Component {
         ) : (
           <div>
             <input
-              value={this.state.interests}
+              value={this.state.interests || ''}
               name="interests"
               placeholder="Create your interests here!"
               onChange={(e) => this.handleInput(e)}
             />
-            <button onClick={this.handleEditInterestsToggle}>Submit Interests</button>
+            <button onClick={this.editInterests}>Submit Interests</button>
           </div>
         )}
         </section>  
-        <section className='edit-flex'>
+        <section className='info-flex'>
           {!this.state.editInfoToggle ? (
           <div >
             <p>{this.state.basicInfo}</p>
@@ -170,19 +192,16 @@ class Profile extends Component {
         ) : (
           <div>
             <input
-              value={this.state.basicInfo}
+              value={this.state.basicInfo || ''}
               name="basicInfo"
               placeholder="Create your basic info here!"
               onChange={(e) => this.handleInput(e)}
             />
-            <button onClick={this.handleEditInfoToggle}>Submit Info</button>
+            <button onClick={this.editInfo}>Submit Info</button>
           </div>
         )}
         </section>
-        
-        
         </div>
-        
       </div>
     );
   }

@@ -3,10 +3,13 @@
 .chat-wrapper {
   height: 100vh;
   background-attachment: fixed;
+  display: inline-flex;
+  margin-right: 100px;
 }
 
 .chat-container {
   margin-top: 10px;
+  
   padding: 10px;
 }
 

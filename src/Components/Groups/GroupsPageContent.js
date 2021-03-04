@@ -6,16 +6,11 @@ import {v4 as randomString} from 'uuid';
 import Dropzone from 'react-dropzone';
 import {GridLoader} from 'react-spinners';
 
-export default function GroupsPageContent() {
-        return (
-                <div className="contentContainer">
-                        <div className="mainHeading">
-                        <h2 className="headingtxt">
-                                Group Page
-                        </h2>
-                        </div>
-                        <div className="mainContainers">
-                                <div className="imagecontainer">
+export default function GroupPageContent() {
+    return (
+            <div className="contentContainer">
+                    <div className="mainContainers">
+                            <div className="imagecontainer">
                                 <div className="co-heading">
                                         <p className="co-heading-text"></p>
                                 </div>
