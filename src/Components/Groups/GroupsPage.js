@@ -104,7 +104,7 @@ class GroupsPage extends Component {
                         <div className="groupContainer">
                             <div className="headercontent">
                                 <div className="heading">
-                                        <h1 className="LogoText">Band Social</h1>
+                                        <h1 className="LogoText"></h1>
                                 </div>
                             </div>
                     </div>

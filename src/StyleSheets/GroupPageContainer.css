@@ -6,7 +6,7 @@
 }
 
 .mainHeading {
-    width: 100%;
+    width: 20%;
 }
 
 .headingtxt {
@@ -99,10 +99,14 @@
 }
 
 .memberContent {
-    margin: 10% auto;
+    /* margin: 10% auto; */
     background-color: #457B9D;
     height: 200px;
+    justify-content: center;
     width: 82%;
+    align-items: center;
+    margin-left: 10%;
+    margin-right: 10%;
 }
 
 .memberHeading {
@@ -156,4 +160,9 @@
     border-radius: 6px;
     border: transparent;
     text-decoration: none;
+}
+.header-container {
+    float: left;
+    height: 40vh;
+    width: 200px;
 }
