@@ -9,15 +9,17 @@
   display: inline-block;
   text-align: left;
   background-color: #457B9D;
+  bottom: 20px;
 }
 .about-flex button {
   height: 40px;
   width: 150px;
   float: right;
   border-radius: 10px;
+  border-width: thin;
 }
 .about-flex button:hover {
-  background-color: #1D3557;
+  background-color: #323c4b;
 }
 .group-event-flex {
   display: flex;

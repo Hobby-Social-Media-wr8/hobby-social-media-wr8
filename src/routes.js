@@ -9,6 +9,7 @@ import MyCalendar from "./Components/Calendar/MyCalendar";
 import AddPost from './Components/Blog/AddPost'
 import GroupPage from "./Components/Group/GroupPage";
 import Profile from "./Components/Profile/Profile";
+import GroupsPage from "./Components/Groups/GroupsPage"
 
 export default (
   <Switch>

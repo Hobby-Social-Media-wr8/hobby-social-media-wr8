@@ -19,24 +19,37 @@
   margin-top: 70px;
   height: 50vh;
   width: 50vw;
-  overflow-y: auto;
+  overflow-y:scroll;
+  scroll-behavior:smooth;
+  scroll-padding-block-end: 10%;
 }
 
 .messages {
   padding: 3px;
+
 }
+
 
 .message-display-right {
   text-align: right;
   padding: 15px 5px;
   display: flex;
   justify-content: flex-end;
+
+}
+
+.message-display-right span {
+  color: #85182A
 }
 
 .message-display-left {
   text-align: left;
   padding: 15px 5px;
   display: flex;
+}
+
+.message-display-left span {
+  color: #85182A
 }
 
 .my-message,

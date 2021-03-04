@@ -9,4 +9,14 @@ button {
   background-color: #85182A;
   color: #F1FAEE;
   font-family: Arial, Helvetica, sans-serif;
+  border-width: thin;
+  font-size: 18px;
+}
+
+h1 {
+  margin: 0 auto;
+}
+h2 {
+  font-size: 26px;
+  margin: 10px 0 0 0;
 }
