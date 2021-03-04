@@ -17,10 +17,8 @@ export default function GroupsPageContent() {
                         <div className="mainContainers">
                                 <div className="imagecontainer">
                                 <div className="co-heading">
-                                        <p className="co-heading-text">Anything But Human</p>
+                                        <p className="co-heading-text"></p>
                                 </div>
-                                <div className="content">
-                                        <img className="indicatorImage" alt="" />
                                 </div>
                                 <div className="listContainer">
                                 <div className="co-heading">
@@ -69,6 +67,6 @@ export default function GroupsPageContent() {
                                 </div>
                         </div>
                 </div >
-                </div>
+                
         )
 }

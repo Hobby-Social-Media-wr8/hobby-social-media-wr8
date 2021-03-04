@@ -1,17 +1,17 @@
 .groupContainer {
     margin: 0;
     padding: 0;
-    height: auto;
     overflow-y: hidden;
     background-color: #1D3557;
+    /* height: 400px; */
 }
 
-.headercontent {
+/* .headercontent {
     width: 100%;
     height: 100px;
     background-color: transparent;
     display: flex;
-}
+} */
 
 .heading {
     width: 85%;
@@ -19,10 +19,10 @@
     line-height: 55px;
 }
 
-.LogoText {
+/* .LogoText {
     color: #F1FaEE;
     font-family: 'Noto Sans', sans-serif;
-}
+} */
 
 .hamburger {
     width: 15%;
