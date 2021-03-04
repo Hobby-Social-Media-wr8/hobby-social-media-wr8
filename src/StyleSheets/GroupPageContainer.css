@@ -1,4 +1,7 @@
 .contentContainer {
+    margin: 10px;
+    margin-right: 100px;
+    height: 100vh;
     background-color: #1D3557;
 }
 
@@ -14,8 +17,7 @@
 }
 
 .mainContainers {
-    display: flex;
-    flex-wrap: wrap;
+    display: inline-flex;
     width: 90%;
     justify-content: center;
     align-items: center;
