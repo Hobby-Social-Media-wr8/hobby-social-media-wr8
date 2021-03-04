@@ -1,0 +1,1 @@
+INSERT INTO occasions (occasion_user_id, occasion_title, occasion_description, occasion_location, occasion_img) VALUES ($1, $2, $3, $4, $5);

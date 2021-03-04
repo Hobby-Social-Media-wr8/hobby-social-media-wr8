@@ -17,7 +17,7 @@ export default class MyCalendar extends Component {
   this.handleEventClick = this.handleEventClick.bind(this)
 }
 componentDidMount(){
-   axios.get('/api/events')
+   axios.get('/api/calendar')
   .then(events => {
     this.setState({currentEvents: events.data})
   })
@@ -77,7 +77,7 @@ componentDidMount(){
     
     let title = prompt('Please enter a new title & location for your event');
     let calendarApi = selectInfo.view.calendar;
-    // axios.post('/api/event', {id: createEventId()})
+    // axios.post('/api/calendar', {id: createEventId()})
     calendarApi.unselect(); 
 
     if (title) {
@@ -93,7 +93,7 @@ componentDidMount(){
 
   handleEventClick = (clickInfo) => {
     console.log(clickInfo.event._def.title)
-    axios.delete(`/api/event/${clickInfo.event._def.title}`) .catch(err => console.log(err))
+    axios.delete(`/api/calendar/${clickInfo.event._def.title}`) .catch(err => console.log(err))
     if (
       window.confirm(
         `Are you sure you want to delete the event '${clickInfo.event.title}'`
@@ -107,7 +107,7 @@ componentDidMount(){
   handleEvents = (events) => {
     console.log(JSON.stringify(events))
     
-    axios.post('/api/event', events)
+    axios.post('/api/calendar', events)
     .then (events =>
     this.setState({
       currentEvents: events.data

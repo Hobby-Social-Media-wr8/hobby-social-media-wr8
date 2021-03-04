@@ -26,7 +26,8 @@ class Header extends Component {
                 <Link to = '/profile' className='nav-links'>Profile</Link>
                 <Link to = '/add-post' className='nav-links'>Add Post</Link>
                 <Link to = '/blog' className='nav-links'>Blog</Link>
-                <Link to = '/events' className='nav-links'>Events</Link>
+                <Link to = '/calendar' className='nav-links'>Calendar</Link>
+                <Link to = '/events' className='nav-links'>Event</Link>
                 <Link to = '/groups' className='nav-links'>Groups</Link> 
             </nav>
             )
