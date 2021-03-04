@@ -13,7 +13,7 @@ class Home extends Component {
     this.props.history.push('/groups')
   }
   handleEventsButton = () => {
-    this.props.history.push('/events')
+    this.props.history.push('/calendar')
   }
 
   render() {
@@ -25,7 +25,7 @@ class Home extends Component {
           <p>If you are visiting, feel free to visit the EVENTS and GROUPS page to browse the resources that might help you find that last perfect piece to your group!</p>
           <p>Although if you chose to register and login to our website, you can personalize your profile and utilize our blog along with our chat features to advertise and connect with your select musician.</p>
           <button onClick={this.handleGroupsButton}>Go to Groups</button>
-          <button onClick={this.handleEventsButton}>Go to Events</button>
+          <button onClick={this.handleEventsButton}>Go to Calendar</button>
           <button onClick={this.handleLoginButton}>Go to Login</button>
         </div>
         <div className='group-event-flex'>
