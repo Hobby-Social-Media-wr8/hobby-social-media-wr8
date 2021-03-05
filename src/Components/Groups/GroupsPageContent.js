@@ -4,13 +4,19 @@ import { Link } from 'react-router-dom';
 import {v4 as randomString} from 'uuid';
 import Dropzone from 'react-dropzone';
 import {GridLoader} from 'react-spinners';
+import axios from 'axios';
+import {connect} from 'react-redux';
 
-export default class GroupPageContent extends Component {
+class GroupsPageContent extends Component {
         constructor(props) {
                 super(props);
         }
+        deleteGroup =(group_id)=>{
+                axios.delete(`api/group/${group_id}`)
+                .then(_=>this.props.getAllGroups())
+        }
         render(){
-        console.log(this.props.group)
+        console.log(this.props)
         const mappedGroups = this.props.group.map((group) => {
                 console.log(group)
                 return (
@@ -21,6 +27,18 @@ export default class GroupPageContent extends Component {
                         <div className="GroupLocation">
                                         {group.group_location}
                                 </div>
+                        
+                        {group.user_id===this.props.user.user_id ?(
+                                <button className="DeleteButton" onClick={(_)=>this.deleteGroup(group.group_id)}>Delete Group</button>
+                        ):(
+                                null
+                        )}
+
+
+
+
+
+
                         <div className="mainContainers">
                                 <div className="imagecontainer">
                                 <div className="co-heading">
@@ -68,3 +86,7 @@ export default class GroupPageContent extends Component {
         )
     }
 }
+function mapStateToProps(state){
+        return state;
+}
+export default connect(mapStateToProps)(GroupsPageContent)
