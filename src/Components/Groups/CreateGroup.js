@@ -81,8 +81,8 @@ class CreateGroup extends Component {
         return (
             <div className="main">
                 <h2 className="title">New Group</h2>
-                <img src={url} alt="" height="250px" width="250px" />
-                <h2>Upload Below</h2>
+                <img className="GroupLogo" src={url} alt="" height="250px" width="250px" />
+                <h2 className="Upload">Upload Below</h2>
                 <Dropzone onDropAccepted={this.getSignedRequest} accept="image/*" multiple={false}>
           {({ getRootProps, getInputProps }) => (
             <div
@@ -104,7 +104,7 @@ class CreateGroup extends Component {
             </div>
           )}
         </Dropzone>
-        <div>
+        <div className="Form">
             <p>Group Name</p>
             <input
                 value = {this.state.group_name}
@@ -131,7 +131,7 @@ class CreateGroup extends Component {
                 onChange = {e => this.setState({group_needed_members: e.target.value})}
             />
         </div>
-        <button
+        <button className="CreateButton"
         onClick={this.submit}
         >Create Group</button>
         

@@ -13,5 +13,10 @@ module.exports = {
         const db = req.app.get("db")
         const allGroups = await db.groups.read_all_groups()
         return res.status(200).send(allGroups)
+    },
+    deleteGroup:(req, res) => {
+        req.app.get("db").groups.delete_group(req.params.user_id)
+        .then(_=>res.sendStatus(200))
     }
+
 }

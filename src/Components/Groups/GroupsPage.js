@@ -16,6 +16,9 @@ class GroupsPage extends Component {
         componentDidMount(){
           this.getAllGroups()
         }
+        handleAddButton = ()=>{
+                this.props.history.push("/creategroup")
+        }
         getAllGroups = () => {
           axios.get("/api/group").then(res => {
             this.setState({groups: res.data})
@@ -26,16 +29,18 @@ class GroupsPage extends Component {
         render() {
                 return(
                         <div className="groups-container">
-                <h2>Group List</h2>
+                <h1>Groups</h1>
                         <>
                         <div className="groupContainer">
                             <div className="headercontent">
                                 <div className="heading">
+                                        <button className="CreateGroup" onClick={this.handleAddButton}>Create Group</button>
                                         <h1 className="LogoText"></h1>
                                 </div>
                             </div>
                     </div>
                     <GroupPageContent 
+                getAllGroups={this.getAllGroups}
                       group={this.state.groups}
                     />
                     </>

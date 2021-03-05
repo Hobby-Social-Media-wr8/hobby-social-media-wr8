@@ -2,8 +2,9 @@
     margin: 10px;
     margin-right: 100px;
     height: 50vh;
-    border-style: solid;
+    /* border-style: solid; */
     width: 80vw;
+    margin-bottom: 30px;
 }
 
 .mainHeading {
@@ -140,12 +141,14 @@
     font-size: 28px;
     position: relative;
     left: 45.9%;
+    top: 3%;
 }
 .GroupLocation {
     position: relative;
     left: 49%;
     width: 100px;
     height: 20px;
+    top: 3%;
 }
 .GroupDescription {
     height: 50px;
@@ -187,4 +190,11 @@
     position: relative;
     left: 15%;
     bottom: 70%;
+}
+.DeleteButton {
+    position: relative;
+    left: 40%;
+    /* bottom: 3%; */
+    height: 45px;
+    width: 110px;
 }

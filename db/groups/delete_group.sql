@@ -1,0 +1,1 @@
+delete from Groups where group_id = $1

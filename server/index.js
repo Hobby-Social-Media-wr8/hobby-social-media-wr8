@@ -91,6 +91,7 @@ app.get('/api/posts', pc.readPosts);
 // GROUP ENDPOINTS
 app.post("/api/group", gc.createGroup);
 app.get("/api/group", gc.readGroups);
+app.delete("/api/group/:user_id", gc.deleteGroup)
 
 
 //Calendar Controllers
