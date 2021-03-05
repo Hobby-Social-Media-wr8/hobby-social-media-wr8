@@ -4,6 +4,7 @@ const express = require("express");
 const massive = require("massive");
 const aws = require('aws-sdk');
 const profCtrl = require("./Controllers/profileController");
+const occCtrl = require("./Controllers/occController");
 const socket = require('socket.io');
 const authCtrl = require("./Controllers/authController"),
   ec= require('./controllers/eventsController')
@@ -92,9 +93,15 @@ app.post("/api/group", gc.createGroup);
 app.get("/api/group", gc.readGroups);
 
 
-//Events Controllers
-app.get('/api/events', ec.getCalEvents)
-app.post('/api/event/:id', ec.addEvents)
+//Calendar Controllers
+app.get('/api/calendar', ec.getCalEvents)
+app.post('/api/calendar/:id', ec.addEvents)
+
+// EVENT ENDPOINTS
+
+app.get('/api/events', occCtrl.getAllOccasions)
+app.get('/api/event', occCtrl.getOccasion)
+app.post('/api/events/:occasion_user_id', occCtrl.addOccasion)
 
 //Sockets
 

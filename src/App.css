@@ -10,7 +10,7 @@ button {
   color: #F1FAEE;
   font-family: Arial, Helvetica, sans-serif;
   border-width: thin;
-  font-size: 18px;
+  font-size: 14px;
 }
 
 h1 {
@@ -19,4 +19,35 @@ h1 {
 h2 {
   font-size: 26px;
   margin: 10px 0 0 0;
+}
+button:hover {
+  background-color: #323c4b;
+}
+@media (max-width: 450px){
+  .header-container {
+    margin-right: 60px;
+    font-size: 12px;
+  }
+  .home-container {
+    width: 100%;
+    display: inline-block;
+    overflow-x: hidden;
+    font-size: 14px;
+  }
+  .group-event-flex {
+    margin-right: 60px;
+    width: 310px;
+    height: 300px;
+    display: inline-block;
+    overflow: scroll;
+  }
+  .group-flex {
+    height: 150px;
+    display: inline-flex;
+  }
+  .group-flex img{
+    height: 50px;
+    width: 75px;
+  }
+  
 }

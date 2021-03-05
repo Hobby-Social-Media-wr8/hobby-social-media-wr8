@@ -1,4 +1,6 @@
 import {Component} from 'react'
+// import "../StyleSheets/GroupPage.css"
+// import { AiOutlineMenu } from "react-icons/ai";
 import GroupPageContent from '../Groups/GroupsPageContent';
 import "../../StyleSheets/GroupPage.css"
 import axios from 'axios'
@@ -17,7 +19,7 @@ class GroupsPage extends Component {
         getAllGroups = () => {
           axios.get("/api/group").then(res => {
             this.setState({groups: res.data})
-            
+            console.log(this.state.groups)
           })
           .catch (error => console.log(error))
         }
