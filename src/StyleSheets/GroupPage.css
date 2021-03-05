@@ -4,3 +4,9 @@
     display: inline-block;
     
 }
+.CreateGroup {
+    position: relative;
+    right: 40%;
+    height: 45px;
+    width: 110px;
+}

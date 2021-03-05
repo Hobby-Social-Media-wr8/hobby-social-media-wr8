@@ -1,67 +1,92 @@
-import React from 'react'
+import {Component} from 'react'
 import '../../StyleSheets/GroupPageContainer.css'
 import { Link } from 'react-router-dom';
-import "../../StyleSheets/GroupPageContainer.css"
 import {v4 as randomString} from 'uuid';
 import Dropzone from 'react-dropzone';
 import {GridLoader} from 'react-spinners';
+import axios from 'axios';
+import {connect} from 'react-redux';
 
-export default function GroupPageContent() {
-    return (
-            <div className="contentContainer">
-                    <div className="mainContainers">
-                            <div className="imagecontainer">
+class GroupsPageContent extends Component {
+        constructor(props) {
+                super(props);
+        }
+        deleteGroup =(group_id)=>{
+                axios.delete(`api/group/${group_id}`)
+                .then(_=>this.props.getAllGroups())
+        }
+        render(){
+        console.log(this.props)
+        const mappedGroups = this.props.group.map((group) => {
+                console.log(group)
+                return (
+                        <div className="contentContainer" key={group.group_id}>
+                        <div className="GroupName">
+                                {group.group_name}
+                        </div>
+                        <div className="GroupLocation">
+                                        {group.group_location}
+                                </div>
+                        
+                        {group.user_id===this.props.user.user_id ?(
+                                <button className="DeleteButton" onClick={(_)=>this.deleteGroup(group.group_id)}>Delete Group</button>
+                        ):(
+                                null
+                        )}
+
+
+
+
+
+
+                        <div className="mainContainers">
+                                <div className="imagecontainer">
                                 <div className="co-heading">
                                         <p className="co-heading-text"></p>
+                                        <img
+                                                src={group.img_url}
+                                        />
                                 </div>
                                 </div>
-                                <div className="listContainer">
-                                <div className="co-heading">
-                                        <p className="co-heading-text">Band Members</p>
+                                <div className="GroupDescription">
+                                        <h4>{group.group_text}</h4>
                                 </div>
+                                <div className="flex-div">
                                 <div className="list-content">
-                                        <ul className="unordered">
-                                                <li className="listItems">Member 01</li>
-                                                <li className="listItems">Member 02</li>
-                                                <li className="listItems">Member 03</li>
-                                                <li className="listItems">Member 04</li>
-                                                <li className="listItems">Member 05</li>
-                                                <li className="listItems">Member 06</li>
-                                                <li className="listItems">Member 07</li>
-                                                <li className="listItems">Member 08</li>
-                                                <li className="listItems">Member 09</li>
-                                                <li className="listItems">Member 10</li>
-                                                <li className="listItems">Member 11</li>
-                                                <li className="listItems">Member 12</li>
-                                                <li className="listItems">Member 13</li>
-                                                <li className="listItems">Member 14</li>
-                                                <li className="listItems">Member 15</li>
-                                        </ul>
+                                        <p>{group.group_instruments}</p>
                                 </div>
-                                </div>
-                        </div>
-                        <div className="footerBox">
+                                <div className="footerBox">
                                 <div className="memberContent">
                                 <div className="memberHeading">
                                         <p className="textHeading">Needed Band Members</p>
                                 </div>
                                 <div className="MemberslistContainer">
                                         <div className="contactList">
-                                                <ul className="membercontentList">
-                                                        <li className="memberlistItems">Drummers</li>
-                                                        <li className="memberlistItems">Keyboard</li>
-                                                        <li className="memberlistItems">Violinist</li>
-                                                </ul>
+                                                <div className="NeededMembers">
+                                                        <p>{group.group_needed_members}</p>
+                                                </div>
                                         </div>
-                                        <div className="btn">
-                                                <Link to="/chat" className="contactwithus">
-                                                        Contact With Us
+                                </div>
+                                </div>
+                                </div>
+                                <div className="btn">
+                                                <Link to={`/chat/${group.user_id}`} className="contactwithus">
+                                                        <button>Contact Us</button>
                                                 </Link>
                                         </div>
                                 </div>
-                                </div>
                         </div>
-                </div >
-                
+                        </div>
+                )
+        })
+    return (
+            <div>
+                {mappedGroups}
+            </div>
         )
+    }
 }
+function mapStateToProps(state){
+        return state;
+}
+export default connect(mapStateToProps)(GroupsPageContent)

@@ -20,6 +20,9 @@ h2 {
   font-size: 26px;
   margin: 10px 0 0 0;
 }
+button:hover {
+  background-color: #323c4b;
+}
 @media (max-width: 450px){
   .header-container {
     margin-right: 60px;

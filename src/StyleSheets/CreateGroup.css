@@ -1,0 +1,22 @@
+.main {
+    height: 100vh;
+}
+.Form {
+    position: relative;
+}
+.CreateButton {
+    position: relative;
+    height: 45px;
+    width: 110px;
+}
+.Upload {
+    position: relative;
+}
+.title {
+    position: relative;
+    right: 5%;
+}
+.GroupLogo {
+    position: relative;
+    right: 5%;
+}

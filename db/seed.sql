@@ -73,9 +73,9 @@ CREATE TABLE groups (
     group_id SERIAL PRIMARY KEY, 
     group_name VARCHAR(100),
     group_location VARCHAR(250),
-    group_type INT,
+    group_text TEXT,
     group_instruments TEXT,
-    img_url VARCHAR(100),
+    img_url TEXT,
     group_needed_members TEXT,
     user_id INT REFERENCES users(user_id) UNIQUE
 );

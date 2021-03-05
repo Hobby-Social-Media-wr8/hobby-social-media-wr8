@@ -9,6 +9,7 @@ const socket = require('socket.io');
 const authCtrl = require("./Controllers/authController"),
   ec= require('./controllers/eventsController')
   pc = require("./Controllers/postController");
+  gc = require("./Controllers/groupcontroller")
 const { SERVER_PORT, CONNECTION_STRING, SESSION_SECRET, S3_BUCKET, AWS_ACCESS_KEY_ID, AWS_SECRET_ACCESS_KEY} = process.env;
 
 const app = express();
@@ -85,6 +86,13 @@ app.post("/api/post", pc.createPost);
 app.delete('/api/post/:user_id', pc.deletePost)
 app.get('/api/post/:user_id', pc.readPost);
 app.get('/api/posts', pc.readPosts);
+
+
+// GROUP ENDPOINTS
+app.post("/api/group", gc.createGroup);
+app.get("/api/group", gc.readGroups);
+app.delete("/api/group/:user_id", gc.deleteGroup)
+
 
 //Calendar Controllers
 app.get('/api/calendar', ec.getCalEvents)

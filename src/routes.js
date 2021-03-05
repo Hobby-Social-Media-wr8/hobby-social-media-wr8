@@ -10,6 +10,7 @@ import AddPost from './Components/Blog/AddPost'
 import Profile from "./Components/Profile/Profile";
 import Occasions from "./Components/Occasions/Occasions"
 import GroupsPage from "./Components/Groups/GroupsPage"
+import CreateGroup from "./Components/Groups/CreateGroup"
 
 export default (
   <Switch>
@@ -23,5 +24,6 @@ export default (
     <Route path="/groups" component={GroupsPage} />
     <Route path="/events/:id" component={Occasions} />
     <Route path="/profile" component={Profile} />
+    <Route path="/creategroup" component={CreateGroup} />
   </Switch>
 );
