@@ -75,7 +75,7 @@ app.post("/api/register", authCtrl.register);
 app.post("/api/login", authCtrl.login);
 app.get("/api/logout", authCtrl.logout);
 
-// OTHER ENDPOINTS
+// PROFILE ENDPOINTS
 
 app.get("/api/profile/:profile_user_id", profCtrl.getUserProfile);
 app.put("/api/editinfo/:profile_user_id", profCtrl.editInfo);
@@ -100,8 +100,7 @@ app.post('/api/calendar/:id', ec.addEvents)
 
 // EVENT ENDPOINTS
 
-app.get('/api/events', occCtrl.getAllOccasions)
-app.get('/api/event', occCtrl.getOccasion)
+app.get('/api/events/:occasion_user_id', occCtrl.getUserOccasion)
 app.post('/api/events/:occasion_user_id', occCtrl.addOccasion)
 
 //Sockets

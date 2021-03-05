@@ -1,3 +1,3 @@
-SELECT * FROM occasions WHERE occasion_id = $1;
+SELECT * FROM occasions WHERE occasion_user_id = $1;
 
 -- don't know if this is correct

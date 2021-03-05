@@ -1,4 +1,10 @@
 .occasions-container {
   display: inline-block;
   height: 100vh;
+  margin: 50px;
+  margin-left: -300px;
+}
+.occasions-container img {
+  height: 250px;
+  margin-bottom: 50px;
 }

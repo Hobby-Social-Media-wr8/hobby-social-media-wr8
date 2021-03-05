@@ -15,6 +15,7 @@ class Home extends Component {
   handleEventsButton = () => {
     this.props.history.push('/calendar')
   }
+// Does the ^ endpoint need to change?
 
   render() {
     return (
@@ -24,8 +25,6 @@ class Home extends Component {
           <p>This website is here to connect musicians looking for that certain skill or interest in another musician. Whether you are in need of another band member, or a few more instruments for your orchestra, Band Social is here to network your needs.</p>
           <p>If you are visiting, feel free to visit the EVENTS and GROUPS page to browse the resources that might help you find that last perfect piece to your group!</p>
           <p>Although if you chose to register and login to our website, you can personalize your profile and utilize our blog along with our chat features to advertise and connect with your select musician.</p>
-          <button onClick={this.handleGroupsButton}>Go to Groups</button>
-          <button onClick={this.handleEventsButton}>Go to Calendar</button>
           <button onClick={this.handleLoginButton}>Go to Login</button>
         </div>
         <div className='group-event-flex'>
@@ -40,9 +39,9 @@ class Home extends Component {
           <section className='event-flex'>
             <h2>Events</h2>
             <div className='event-images'>
-              <img src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQn-sO2E4fNfBsT6aRemzywV9zfNllDm-RQoQ&usqp=CAU' onClick={this.handleEventsButton}/>
-              <img src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTBGdfZxYZevaernjoNdh6V846roBH4wqhKmQ&usqp=CAU'/>
-              <img src='https://www.buschsystems.com/resource-center/images/uploads/page/wast-management-planning-for-outdoor-events_template_1800x1200_header-image.jpg'/>
+              <img src='https://cdn.theculturetrip.com/wp-content/uploads/2019/03/ia_0340_the-best-jazz-clubs-in-new-york-city-kw_header_4.jpg' onClick={this.handleEventsButton}/>
+              <img src='https://img.freepik.com/free-vector/hand-holding-mic-retro_43623-474.jpg?size=338&ext=jpg'/>
+              <img src='https://image.freepik.com/free-photo/art-instruments-music-colorful-blackboard_1379-1799.jpg'/>
             </div>
             
           </section>

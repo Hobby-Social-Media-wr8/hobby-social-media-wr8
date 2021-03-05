@@ -22,7 +22,7 @@ export default (
     <Route path="/chat/:id" component={Chat} />
     <Route path="/message" component={Message} />
     <Route path="/groups" component={GroupsPage} />
-    <Route path="/events" component={Occasions} />
+    <Route path="/events/:id" component={Occasions} />
     <Route path="/profile" component={Profile} />
     <Route path="/creategroup" component={CreateGroup} />
   </Switch>

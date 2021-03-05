@@ -121,7 +121,10 @@ class Profile extends Component {
       })
       .catch((err) => console.log(err));
   };
-
+  handleOccasionButton = () => {
+    this.props.history.push(`/events/${this.props.user.user_id}`)
+    
+  }
 
   handleLogout = () => {
     axios
@@ -164,6 +167,7 @@ class Profile extends Component {
           )}
          </Dropzone>
         <button onClick={this.handleLogout}>Logout</button>
+        <button onClick={this.handleOccasionButton}>Go To Events</button>
         <div className='other-flex'>
           <section className='interests-flex'>
          {!this.state.editInterestToggle ? (
